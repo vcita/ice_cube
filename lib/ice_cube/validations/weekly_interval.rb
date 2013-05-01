@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 require 'date'
 
 module IceCube
@@ -19,7 +21,7 @@ module IceCube
       end
 
       def build_s(builder)
-        builder.base = interval == 1 ? 'Weekly' : "Every #{interval} weeks"
+        builder.base = I18n.t('ice_cube.each_week', interval)
       end
 
       def build_ical(builder)
@@ -44,7 +46,7 @@ module IceCube
         st = schedule.start_time
         start_date = Date.new(st.year, st.month, st.day)
         weeks = (
-          (date - TimeUtil.normalize_weekday(date.wday, week_start)) - 
+          (date - TimeUtil.normalize_weekday(date.wday, week_start)) -
           (start_date - TimeUtil.normalize_weekday(start_date.wday, week_start))
         ) / 7
         unless weeks % interval == 0

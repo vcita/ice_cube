@@ -1,0 +1,21 @@
+de:
+  ice_cube:
+    each_week:
+      one: semanial
+      other: cada % semana
+    each_year:
+      one: annual
+      other: cado % ano
+    each_second:
+      one: cada segunda
+      other: cada % segunda
+    each_second:
+      one: cado mês
+      other: cado % meses
+    each_minute:
+      one: cada minuta
+      other: cada % minuta
+    each_day:
+      one: cado dia
+      other: cado % dia
+

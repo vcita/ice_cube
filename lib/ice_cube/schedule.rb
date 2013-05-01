@@ -239,11 +239,11 @@ module IceCube
     def to_s
       pieces = []
       ed = extimes; rd = rtimes - ed
-      pieces.concat rd.sort.map { |t| t.strftime(TO_S_TIME_FORMAT) }
+      pieces.concat rd.sort.map { |t| I18n.l(t) }
       pieces.concat rrules.map { |t| t.to_s }
-      pieces.concat exrules.map { |t| "not #{t.to_s}" }
-      pieces.concat ed.sort.map { |t| "not on #{t.strftime(TO_S_TIME_FORMAT)}" }
-      pieces << "until #{end_time.strftime(TO_S_TIME_FORMAT)}" if end_time
+      pieces.concat exrules.map { |t| "nicht #{t.to_s}" }
+      pieces.concat ed.sort.map { |t| "nicht an #{I18n.l(t)}" }
+      pieces << "bis #{I18n.l(end_time)}" if end_time
       pieces.join(' / ')
     end
 
@@ -294,7 +294,7 @@ module IceCube
       schedule = IceCube::Schedule.new TimeUtil.deserialize_time(data[:start_date])
       schedule.duration = data[:duration] if data[:duration]
       schedule.end_time = TimeUtil.deserialize_time(data[:end_time]) if data[:end_time]
-      data[:rrules] && data[:rrules].each { |h| schedule.rrule(IceCube::Rule.from_hash(h)) }  
+      data[:rrules] && data[:rrules].each { |h| schedule.rrule(IceCube::Rule.from_hash(h)) }
       data[:exrules] && data[:exrules].each { |h| schedule.exrule(IceCube::Rule.from_hash(h)) }
       data[:rtimes] && data[:rtimes].each do |t|
         schedule.add_recurrence_time TimeUtil.deserialize_time(t)

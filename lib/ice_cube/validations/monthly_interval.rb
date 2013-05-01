@@ -17,7 +17,7 @@ module IceCube
       end
 
       def build_s(builder)
-        builder.base = interval == 1 ? 'Monthly' : "Every #{interval} months"
+        builder.base = I18n.t('ice_cube.each_month', interval)
       end
 
       def build_ical(builder)

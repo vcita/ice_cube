@@ -21,7 +21,7 @@ module IceCube
       end
 
       def build_s(builder)
-        builder.base = interval == 1 ? 'Minutely' : "Every #{interval} minutes"
+        builder.base = I18n.t('ice_cube.each_minute', interval)
       end
 
       def build_ical(builder)

@@ -17,7 +17,7 @@ module IceCube
       end
 
       def build_s(builder)
-        builder.base = interval == 1 ? 'Hourly' : "Every #{interval} hours"
+        builder.base = I18n.t('ice_cube.each_hour', interval)
       end
 
       def build_hash(builder)
@@ -41,7 +41,7 @@ module IceCube
 
       def validate(time, schedule)
         start_time = schedule.start_time
-        sec = (time.to_i - time.to_i % ONE_HOUR) - 
+        sec = (time.to_i - time.to_i % ONE_HOUR) -
           (start_time.to_i - start_time.to_i % ONE_HOUR)
         hours = sec / ONE_HOUR
         unless hours % interval == 0

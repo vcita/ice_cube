@@ -1,0 +1,20 @@
+de:
+  ice_cube:
+    each_week:
+      one: wöchentlich
+      other: jede % Woche
+    each_year:
+      one: jährlich
+      other: jedes % Jahr
+    each_second:
+      one: sekündlich
+      other: jede % Sekunde
+    each_month:
+      one: monatlich
+      other: jeden % Monat
+    each_minute:
+      one: minütlich
+      other: jede % Minute
+    each_day:
+      one: täglich
+      other: jeden % Tag

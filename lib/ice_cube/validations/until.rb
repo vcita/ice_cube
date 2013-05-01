@@ -37,15 +37,15 @@ module IceCube
       end
 
       def build_s(builder)
-        builder.piece(:until) << "until #{time.strftime(TO_S_TIME_FORMAT)}"
+        builder.piece(:until) << "#{I18n.t('ice_cube.until')} #{I18n.l(time)}"
       end
 
       def validate(t, schedule)
-        raise UntilExceeded if t > time 
+        raise UntilExceeded if t > time
       end
 
     end
-      
+
   end
 
 end
