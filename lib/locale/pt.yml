@@ -14,7 +14,7 @@ pt:
     each_second:
       one: Cada segunda
       other: Cada %{count} segundas
-    each_second:
+    each_month:
       one: Cado mês
       other: Cado %{count} meses
     each_minute:
