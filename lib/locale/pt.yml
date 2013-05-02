@@ -1,0 +1,29 @@
+pt:
+  ice_cube:
+    not: excepto
+    not_on: excepto em
+    until: até
+    on_weekends: no fim de semana
+    on_weekdays: em dia de útil
+    each_week:
+      one: Semanial
+      other: Cada %{count} semanas
+    each_year:
+      one: Annual
+      other: Cado %{count} anos
+    each_second:
+      one: Cada segunda
+      other: Cada %{count} segundas
+    each_second:
+      one: Cado mês
+      other: Cado %{count} meses
+    each_minute:
+      one: Cada minuta
+      other: Cada %{count} minutas
+    each_hour:
+      one: Cada hora
+      other: Cada %{count} horas
+    each_day:
+      one: Cado dia
+      other: Cado %{count} dias
+

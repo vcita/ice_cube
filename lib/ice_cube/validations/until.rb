@@ -37,7 +37,7 @@ module IceCube
       end
 
       def build_s(builder)
-        builder.piece(:until) << "#{I18n.t('ice_cube.until')} #{I18n.l(time)}"
+        builder.piece(:until) << "#{I18n.t('ice_cube.until')} #{I18n.l(time.to_date, format: "%B %e, %Y")}"
       end
 
       def validate(t, schedule)

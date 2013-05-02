@@ -21,7 +21,7 @@ module IceCube
       end
 
       def build_s(builder)
-        builder.base = I18n.t('ice_cube.each_week', interval)
+        builder.base = I18n.t('ice_cube.each_week', count: interval)
       end
 
       def build_ical(builder)

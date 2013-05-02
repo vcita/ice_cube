@@ -1,5 +1,6 @@
 require 'date'
 require 'ice_cube/deprecated'
+require 'rails-i18n'
 
 # Use psych if we can
 begin
@@ -7,6 +8,8 @@ begin
 rescue LoadError
   require 'yaml'
 end
+
+I18n.load_path << Dir['lib/locale/*{rb,yml}']
 
 module IceCube
 

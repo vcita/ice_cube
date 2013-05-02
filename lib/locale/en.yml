@@ -1,0 +1,28 @@
+en:
+  ice_cube:
+    not: not
+    not_on: not on
+    until: until
+    on_weekends: on weekends
+    on_weekdays: on weekdays
+    each_week:
+      one: Weekly
+      other: Every %{count} weeks
+    each_year:
+      one: Yearly
+      other: Every %{count} years
+    each_second:
+      one: Secondly
+      other: Every %{count} seconds
+    each_month:
+      one: Monthly
+      other: Every %{count} months
+    each_minute:
+      one: Minutely
+      other: Every %{count} minutes
+    each_hour:
+      one: Hourly
+      other: Every %{count} hours
+    each_day:
+      one: Daily
+      other: Every %{count} days

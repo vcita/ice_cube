@@ -3,7 +3,7 @@ require File.dirname(__FILE__) + '/../spec_helper'
 require 'debugger'
 
 describe IceCube::Schedule, 'to_s' do
-  before(:each) { I18n.locale = :en }
+  before(:each) { I18n.locale = :pt }
 
   it 'should have a useful base to_s representation for a secondly rule' do
     IceCube::Rule.secondly.to_s.should == 'Secondly'
