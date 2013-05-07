@@ -5,6 +5,9 @@ pt:
     until: até
     on_weekends: no fim de semana
     on_weekdays: em dia de útil
+    array:
+      last_word_connector: ! ' and '
+      words_connector: ! ', '
     each_week:
       one: Semanial
       other: Cada %{count} semanas

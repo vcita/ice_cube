@@ -5,6 +5,9 @@ en:
     until: until
     on_weekends: on weekends
     on_weekdays: on weekdays
+    array:
+      last_word_connector: ! ' e '
+      words_connector: ! ', '
     each_week:
       one: Weekly
       other: Every %{count} weeks
