@@ -8,6 +8,15 @@ en:
     array:
       last_word_connector: ! ' e '
       words_connector: ! ', '
+    integer:
+      ordinals:
+        default: th
+        1: st
+        2: nd
+        3: rd
+        11: th
+        12: th
+        13: th
     each_week:
       one: Weekly
       other: Every %{count} weeks

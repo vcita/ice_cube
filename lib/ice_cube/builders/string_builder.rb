@@ -1,3 +1,5 @@
+require 'debugger'
+
 module IceCube
 
   class StringBuilder
@@ -40,28 +42,25 @@ module IceCube
 
     class << self
 
-      NUMBER_SUFFIX = ['th', 'st', 'nd', 'rd', 'th', 'th', 'th', 'th', 'th', 'th']
-      SPECIAL_SUFFIX = { 11 => 'th', 12 => 'th', 13 => 'th', 14 => 'th' }
-
       # influenced by ActiveSupport's to_sentence
       def sentence(array)
         *enum, final = array
-        enumeration = enum.join("#{I18n.t('ice_cube.array.words_connector')} ").presence
-        [enumeration, final].compact.join(" #{I18n.t('ice_cube.array.last_word_connector')} ")
+        enumeration = enum.join(I18n.t 'ice_cube.array.words_connector').presence
+        [enumeration, final].compact.join(I18n.t 'ice_cube.array.last_word_connector')
       end
 
       def nice_number(number)
-        if number == -1
-          'last'
-        elsif number < -1
-          suffix = SPECIAL_SUFFIX.include?(number) ?
-            SPECIAL_SUFFIX[number] : NUMBER_SUFFIX[number.abs % 10]
-          number.abs.to_s << suffix << ' to last'
-        else
-          suffix = SPECIAL_SUFFIX.include?(number) ?
-            SPECIAL_SUFFIX[number] : NUMBER_SUFFIX[number.abs % 10]
-          number.to_s << suffix
-        end
+        ordinalize(number)
+      end
+
+      def ordinalize(number)
+        "#{number}#{ordinal(number)}"
+      end
+
+      def ordinal(number)
+        I18n.t("ice_cube.integer.ordinals")[number] ||
+        I18n.t("ice_cube.integer.ordinals")[number % 10] ||
+        I18n.t('ice_cube.integer.ordinals')[:default]
       end
 
     end

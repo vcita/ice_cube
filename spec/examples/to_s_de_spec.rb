@@ -2,8 +2,6 @@
 
 require File.dirname(__FILE__) + '/../spec_helper'
 
-require 'debugger'
-
 describe IceCube::Schedule, 'to_s' do
   before(:each) { I18n.locale = :de }
 
