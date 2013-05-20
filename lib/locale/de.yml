@@ -5,6 +5,15 @@ de:
     until: bis
     on_weekends: an Wochenenden
     on_weekdays: an Wochentagen
+    on_days: an %{days}
+    days_on:
+      sunday: Sonntagen
+      monday: Montagen
+      tuesday: Dienstagen
+      wednesday: Mittwochen
+      thursday: Donnerstagen
+      friday: Freitagen
+      saturday: Samstagen
     array:
       last_word_connector: ! ' und '
       words_connector: ! ', '

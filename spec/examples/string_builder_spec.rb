@@ -17,7 +17,7 @@ describe IceCube::StringBuilder do
     end
 
     it 'should comma and when more than two' do
-      IceCube::StringBuilder.sentence(['1', '2', '3']).should == '1, 2, and 3'
+      IceCube::StringBuilder.sentence(['1', '2', '3']).should == '1, 2 and 3'
     end
 
   end

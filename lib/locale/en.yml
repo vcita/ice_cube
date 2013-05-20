@@ -5,8 +5,17 @@ en:
     until: until
     on_weekends: on weekends
     on_weekdays: on weekdays
+    on_days: on %{days}
+    days_on:
+      sunday: sundays
+      monday: mondays
+      tuesday: tuesdays
+      wednesday: wednesdays
+      thrusday: thursdays
+      friday: fridays
+      saturday: saturdays
     array:
-      last_word_connector: ! ' e '
+      last_word_connector: ! ' and '
       words_connector: ! ', '
     integer:
       ordinals:
