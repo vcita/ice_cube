@@ -3,7 +3,6 @@ require File.dirname(__FILE__) + '/../spec_helper'
 describe IceCube::StringBuilder do
 
   describe :sentence do
-
     it 'should return empty string when none' do
       IceCube::StringBuilder.sentence([]).should == ''
     end
@@ -19,7 +18,6 @@ describe IceCube::StringBuilder do
     it 'should comma and when more than two' do
       IceCube::StringBuilder.sentence(['1', '2', '3']).should == '1, 2 and 3'
     end
-
   end
 
 end
