@@ -92,7 +92,7 @@ describe IceCube::Schedule, 'to_s' do
     schedule = IceCube::Schedule.new Time.now
     schedule.add_recurrence_date Time.local(2010, 3, 20)
     schedule.add_recurrence_date Time.local(2010, 3, 19)
-    schedule.to_s.should == '19. März 2010, 20.März 2010'
+    schedule.to_s.should == '19. März 2010, 20. März 2010'
   end
 
   it 'should remove duplicate rdates' do
@@ -115,7 +115,7 @@ describe IceCube::Schedule, 'to_s' do
     schedule.add_recurrence_date Time.local(2010, 3, 20)
     schedule.add_exception_date Time.local(2010, 3, 20) # ignored
     schedule.add_exception_date Time.local(2010, 3, 21)
-    schedule.to_s.should == 'Wöchentlich außer 20. März 2010, außer 21. März 2010'
+    schedule.to_s.should == 'Wöchentlich, außer 20. März 2010, außer 21. März 2010'
   end
 
   it 'should work with a single rrule' do

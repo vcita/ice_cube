@@ -117,6 +117,7 @@ describe IceCube::Schedule, 'to_s' do
   end
 
   it 'should work with a single rrule' do
+    pending 'dependency'
     schedule = IceCube::Schedule.new Time.local(2010, 3, 20)
     schedule.add_recurrence_rule IceCube::Rule.weekly.day_of_week(:monday => [1])
     schedule.to_s.should == schedule.rrules[0].to_s
