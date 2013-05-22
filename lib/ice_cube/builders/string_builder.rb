@@ -48,7 +48,7 @@ module IceCube
       end
 
       def nice_number(number)
-        ordinalize(number)
+        literal_ordinal(number) || ordinalize(number)
       end
 
       def ordinalize(number)
@@ -59,6 +59,10 @@ module IceCube
         I18n.t("ice_cube.integer.ordinals")[number] ||
         I18n.t("ice_cube.integer.ordinals")[number % 10] ||
         I18n.t('ice_cube.integer.ordinals')[:default]
+      end
+
+      def literal_ordinal(number)
+        I18n.t("ice_cube.integer.literal_ordinals")[number]
       end
 
     end
