@@ -15,7 +15,7 @@ module IceCube
       attr_reader :day
 
       StringBuilder.register_formatter(:day_of_year) do |entries|
-        str = "on the #{StringBuilder.sentence(entries)} "
+        str = "#{I18n.t("ice_cube.on_the")} #{StringBuilder.sentence(entries)} "
         str << (entries.size == 1 ? 'day of the year' : 'days of the year')
         str
       end

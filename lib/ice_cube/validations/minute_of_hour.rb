@@ -17,8 +17,8 @@ module IceCube
       include Validations::Lock
 
       StringBuilder.register_formatter(:minute_of_hour) do |segments|
-        str = "on the #{StringBuilder.sentence(segments)} "
-        str << (segments.size == 1 ? 'minute of the hour' : 'minutes of the hour')
+        str = "#{I18n.t("ice_cube.on_the")} #{StringBuilder.sentence(segments)} "
+        str << (segments.size == 1 ? I18n.t("ice_cube.minutes_of_hour.one") : I18n.t("ice_cube.minutes_of_hour.default")
       end
 
       attr_reader :minute
