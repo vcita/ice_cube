@@ -142,7 +142,7 @@ describe IceCube::Schedule, 'to_s' do
 
   it 'should be able to say the days of the month something happens' do
     rule_str = IceCube::Rule.monthly.day_of_month(1, 15, 30).to_s
-    rule_str.should == 'Monatlich am  1, 15, und 30. Tag des Monats'
+    rule_str.should == 'Monatlich am 1., 15. und 30. Tag des Monats'
   end
 
   it 'should be able to say what day of the year something happens' do
@@ -152,12 +152,12 @@ describe IceCube::Schedule, 'to_s' do
 
   it 'should be able to say what hour of the day something happens' do
     rule_str = IceCube::Rule.daily.hour_of_day(6, 12).to_s
-    rule_str.should == 'Täglich zur 6. and 12. Stunde des Tages'
+    rule_str.should == 'Täglich zur 6. und 12. Stunde des Tages'
   end
 
   it 'should be able to say what minute of an hour something happens - with special suffix minutes' do
     rule_str = IceCube::Rule.hourly.minute_of_hour(10, 11, 12, 13, 14, 15).to_s
-    rule_str.should == 'Stündlich zur 10, 11, 12, 13, 14. und 15. Minute der Stunde'
+    rule_str.should == 'Stündlich zur 10., 11., 12., 13., 14. und 15. Minute der Stunde'
   end
 
   it 'should be able to say what seconds of the minute something happens' do

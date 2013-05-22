@@ -18,8 +18,7 @@ module IceCube
       include Validations::Lock
 
       StringBuilder.register_formatter(:hour_of_day) do |segments|
-        str = "#{I18n.t("ice_cube.on_the")} #{StringBuilder.sentence(segments)} "
-        str << (segments.size == 1 ? 'hour of the day' : 'hours of the day')
+        I18n.t("ice_cube.at_hours_of_the_day", count: segments.size, segments: StringBuilder.sentence(segments))
       end
 
       attr_reader :hour

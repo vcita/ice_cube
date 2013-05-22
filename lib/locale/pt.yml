@@ -6,9 +6,19 @@ pt:
     pieces_connector: ! ', '
     not: excepto
     not_on: senão
-    until: até
+    until: até %{date}
+    in: em
     on_weekends: no fim de semana
     on_weekdays: em dia de útil
+    days_of_month:
+      default: dias do mês
+      one: dia do mês
+    at_hours_of_the_day:
+      other: na %{segments} hora do dia
+    at_minutes_of_hour:
+      other: na %{segments} minuta da hora
+    at_seconds_of_minute:
+      other: no %{segments} segundo da minuta
     on_days: no/na %{days}
     days_on:
       sunday: domingo

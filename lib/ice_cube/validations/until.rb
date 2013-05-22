@@ -1,3 +1,5 @@
+require 'debugger'
+
 module IceCube
 
   module Validations::Until
@@ -37,7 +39,8 @@ module IceCube
       end
 
       def build_s(builder)
-        builder.piece(:until) << "#{I18n.t('ice_cube.until')} #{I18n.l(time.to_date, format: "%B %e, %Y")}"
+        # FIX: stripping blank space before localized date shouldn't be necessary
+        builder.piece(:until) << "#{I18n.t('ice_cube.until', date: I18n.l(time).strip)}"
       end
 
       def validate(t, schedule)

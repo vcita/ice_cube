@@ -18,7 +18,7 @@ module IceCube
 
       StringBuilder.register_formatter(:day_of_month) do |entries|
         str = "#{I18n.t("ice_cube.on_the")} #{StringBuilder.sentence(entries)} "
-        str << (entries.size == 1 ? I18n.t("ice_cube.days_of_month.one") : I18n.t("ice_cube.days_of_the_month.default"))
+        str << (entries.size == 1 ? I18n.t("ice_cube.days_of_month.one") : I18n.t("ice_cube.days_of_month.default"))
         str
       end
 

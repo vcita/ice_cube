@@ -15,8 +15,9 @@ module IceCube
       include Validations::Lock
 
       StringBuilder.register_formatter(:second_of_minute) do |segments|
-        str = "#{I18n.t("ice_cube.on_the")} #{StringBuilder.sentence(segments)} "
-        str << (segments.size == 1 ? I18n.t("ice_cube.seconds_of_minute.one") : I18n.t("ice_cube.seconds_of_minute.default"))
+        # str = "#{I18n.t("ice_cube.on_the")} #{StringBuilder.sentence(segments)} "
+        # str << (segments.size == 1 ? I18n.t("ice_cube.seconds_of_minute.one") : I18n.t("ice_cube.seconds_of_minute.default"))
+        I18n.t("ice_cube.at_seconds_of_minute", count: segments.size, segments: StringBuilder.sentence(segments))
       end
 
       attr_reader :second

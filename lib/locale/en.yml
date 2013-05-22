@@ -6,9 +6,22 @@ en:
     pieces_connector: ! ' / '
     not: not
     not_on: not on
-    until: until
+    until: until %{date}
+    in: in
     on_weekends: on weekends
     on_weekdays: on weekdays
+    days_of_month:
+      default: days of the month
+      one: day of the month
+    at_hours_of_the_day:
+      other: on the %{segments} hours of the day
+      one: on the %{segments} hour of the day
+    at_minutes_of_hour:
+      other: at the %{segments} minutes of the hour
+      one: at the %{segments} minute of the hour
+    at_seconds_of_minute:
+      other: at the %{segments} seconds of the minute
+      one: at the %{segments} second of the minute
     on_days: on %{days}
     days_on:
       sunday: sundays

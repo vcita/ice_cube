@@ -7,9 +7,22 @@ de:
     not: nicht
     not_on: außer
     on_the: am
-    until: bis
+    in: im
+    until: bis %{date}
     on_weekends: an Wochenenden
     on_weekdays: an Wochentagen
+    days_of_month:
+      default: Tag des Monats
+      one: Tag des Monats
+    days_of_year:
+      default: Tag des Jahres
+      one: Tag des Jahres
+    at_hours_of_the_day:
+      other: zur %{segments} Stunde des Tages
+    at_minutes_of_hour:
+      other: zur %{segments} Minute der Stunde
+    at_seconds_of_minute:
+      other: zur %{segments} Sekunde der Minute
     on_days: an %{days}
     days_on:
       - Sonntagen
