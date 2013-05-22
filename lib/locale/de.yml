@@ -1,8 +1,8 @@
 de:
   ice_cube:
     times:
-      default: %{count} mal
-      1: %{count} mal
+      default: ! ' %{count} mal'
+      1: ! ' %{count} mal'
     pieces_connector: ! ', '
     not: nicht
     not_on: außer

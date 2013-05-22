@@ -1,8 +1,8 @@
 pt:
   ice_cube:
     times:
-      default: %{count} vêses
-      1: %{count} vês
+      default: ! ' %{count} vêses'
+      1: ! ' %{count} vês'
     pieces_connector: ! ', '
     not: excepto
     not_on: senão

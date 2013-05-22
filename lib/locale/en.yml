@@ -1,8 +1,8 @@
 en:
   ice_cube:
     times:
-      default: %{count} times
-      1: %{count} time
+      default: ! ' %{count} times'
+      1: ! ' %{count} time'
     pieces_connector: ! ' / '
     not: not
     not_on: not on
