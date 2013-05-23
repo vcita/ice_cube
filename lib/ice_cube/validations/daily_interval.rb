@@ -4,7 +4,8 @@ module IceCube
 
     # Add a new interval validation
     def interval(interval)
-      validations_for(:interval) << Validation.new(interval)
+      @interval = interval
+      replace_validations_for(:interval, [Validation.new(interval)])
       clobber_base_validations(:wday, :day)
       self
     end

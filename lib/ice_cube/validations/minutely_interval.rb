@@ -3,7 +3,8 @@ module IceCube
   module Validations::MinutelyInterval
 
     def interval(interval)
-      validations_for(:interval) << Validation.new(interval)
+      @interval = interval
+      replace_validations_for(:interval, [Validation.new(interval)])
       clobber_base_validations(:min)
       self
     end
