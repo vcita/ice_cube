@@ -1,13 +1,14 @@
 en:
   ice_cube:
     times:
-      default: ! ' %{count} times'
-      1: ! ' %{count} time'
+      other: ! '%{count} times'
+      1: ! '%{count} time'
     pieces_connector: ! ' / '
     not: not
     not_on: not on
-    until: until %{date}
+    on_the: on the
     in: in
+    until: until %{date}
     on_weekends: on weekends
     on_weekdays: on weekdays
     days_of_month:
@@ -24,13 +25,13 @@ en:
       one: at the %{segments} second of the minute
     on_days: on %{days}
     days_on:
-      sunday: sundays
-      monday: mondays
-      tuesday: tuesdays
-      wednesday: wednesdays
-      thrusday: thursdays
-      friday: fridays
-      saturday: saturdays
+      - sundays
+      - mondays
+      - tuesdays
+      - wednesdays
+      - thursdays
+      - fridays
+      - saturdays
     array:
       last_word_connector: ! ' and '
       words_connector: ! ', '

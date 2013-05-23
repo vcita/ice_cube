@@ -174,19 +174,19 @@ describe IceCube::Schedule, 'to_s' do
   it 'should be able to reflect count' do
     schedule = IceCube::Schedule.new(Time.now)
     schedule.add_recurrence_rule IceCube::Rule.weekly.count(1)
-    schedule.to_s.should == '1 mal wöchentlich'
+    schedule.to_s.should == 'Wöchentlich 1 mal'
   end
 
   it 'should be able to reflect count (proper pluralization)' do
     schedule = IceCube::Schedule.new(Time.now)
     schedule.add_recurrence_rule IceCube::Rule.weekly.count(2)
-    schedule.to_s.should == '2 mal wöchentlich'
+    schedule.to_s.should == 'Wöchentlich 2 mal'
   end
 
   it 'should work when an end_time is set' do
     schedule = IceCube::Schedule.new(Time.local(2012, 8, 31), :end_time => Time.local(2012, 10, 31))
     schedule.add_recurrence_rule IceCube::Rule.daily.count(2)
-    schedule.to_s.should == '2 mal täglich bis 31. Oktober 2012'
+    schedule.to_s.should == 'Täglich 2 mal, bis 31. Oktober 2012'
   end
 
 end

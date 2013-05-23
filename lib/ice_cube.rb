@@ -1,6 +1,6 @@
 require 'date'
 require 'ice_cube/deprecated'
-require 'rails-i18n'
+require 'i18n'
 
 # Use psych if we can
 begin

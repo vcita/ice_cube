@@ -1,8 +1,8 @@
 de:
   ice_cube:
     times:
-      default: ! ' %{count} mal'
-      1: ! ' %{count} mal'
+      other: ! '%{count} mal'
+      one: ! '%{count} mal'
     pieces_connector: ! ', '
     not: nicht
     not_on: außer
@@ -15,7 +15,7 @@ de:
       default: Tag des Monats
       one: Tag des Monats
     days_of_year:
-      default: Tag des Jahres
+      other: Tag des Jahres
       one: Tag des Jahres
     at_hours_of_the_day:
       other: zur %{segments} Stunde des Tages

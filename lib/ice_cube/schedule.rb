@@ -296,7 +296,7 @@ module IceCube
       pieces.concat rrules.map { |t| t.to_s }
       pieces.concat exrules.map { |t| "#{I18n.t("ice_cube.not")} #{t.to_s}" }
       pieces.concat ed.sort.map { |t| "#{I18n.t("ice_cube.not_on")} #{I18n.l(t.to_date, format: "%e. %B %Y")}" }
-      pieces << "#{I18n.t("ice_cube.until")} #{I18n.l(end_time.to_date, format: "%e. %B %Y")}" if end_time
+      pieces << "#{I18n.t("ice_cube.until", date: I18n.l(end_time.to_date, format: "%e. %B %Y"))}" if end_time
       pieces.join(I18n.t "ice_cube.array.words_connector")
     end
 

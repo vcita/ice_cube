@@ -1,18 +1,21 @@
 pt:
   ice_cube:
     times:
-      default: ! ' %{count} vêses'
-      1: ! ' %{count} vês'
+      other: ! '%{count} vêses'
+      1: ! '%{count} vês'
     pieces_connector: ! ', '
     not: excepto
     not_on: senão
-    until: até %{date}
+    on_the: no/na
     in: em
-    on_weekends: no fim de semana
+    until: até %{date}
+    on_weekends: no fim da semana
     on_weekdays: em dia de útil
     days_of_month:
       default: dias do mês
       one: dia do mês
+    day_of_year:
+      other: dia do ano
     at_hours_of_the_day:
       other: na %{segments} hora do dia
     at_minutes_of_hour:
@@ -21,13 +24,13 @@ pt:
       other: no %{segments} segundo da minuta
     on_days: no/na %{days}
     days_on:
-      sunday: domingo
-      monday: segunda feira
-      tuesday: terça feira
-      wednesday: quarta feira
-      thursday: quinta feira
-      friday: sexta feira
-      saturday: sábado
+      - domingo
+      - segunda feira
+      - terça feira
+      - quarta feira
+      - quinta feira
+      - sexta feira
+      - sábado
     array:
       last_word_connector: ! ' and '
       words_connector: ! ', '
@@ -35,26 +38,26 @@ pt:
       ordinals:
         default: o
     each_week:
-      one: Semanial
-      other: Cada %{count} semanas
+      one: Cada semana
+      other: A cada %{count} semanas
     each_year:
-      one: Annual
-      other: Cado %{count} anos
+      one: Cada ano
+      other: A cada %{count} anos
     each_second:
-      one: Cada segunda
-      other: Cada %{count} segundas
+      one: Cada segundo
+      other: A cada %{count} segundos
     each_month:
-      one: Cado mês
-      other: Cado %{count} meses
+      one: Cada mês
+      other: A cada %{count} mêses
     each_minute:
       one: Cada minuta
-      other: Cada %{count} minutas
+      other: A cada %{count} minutas
     each_hour:
       one: Cada hora
-      other: Cada %{count} horas
+      other: A cada %{count} horas
     each_day:
-      one: Cado dia
-      other: Cado %{count} dias
+      one: Cada dia
+      other: A cada %{count} dias
   date:
     abbr_day_names:
     - Dom
