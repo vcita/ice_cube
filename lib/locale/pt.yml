@@ -22,42 +22,42 @@ pt:
       other: na %{segments} minuta da hora
     at_seconds_of_minute:
       other: no %{segments} segundo da minuta
-    on_days: no/na %{days}
+    on_days: ! '%{days}'
     days_on:
-      - domingo
-      - segunda feira
-      - terça feira
-      - quarta feira
-      - quinta feira
-      - sexta feira
-      - sábado
+      - no domingo
+      - na segunda feira
+      - na terça feira
+      - na quarta feira
+      - na quinta feira
+      - na sexta feira
+      - no sábado
     array:
-      last_word_connector: ! ' and '
+      last_word_connector: ! ' e '
       words_connector: ! ', '
     integer:
       ordinals:
         default: o
     each_week:
-      one: Cada semana
-      other: A cada %{count} semanas
+      one: cada semana
+      other: a cada %{count} semanas
     each_year:
-      one: Cada ano
-      other: A cada %{count} anos
+      one: cada ano
+      other: a cada %{count} anos
     each_second:
-      one: Cada segundo
-      other: A cada %{count} segundos
+      one: cada segundo
+      other: a cada %{count} segundos
     each_month:
-      one: Cada mês
-      other: A cada %{count} mêses
+      one: cada mês
+      other: a cada %{count} mêses
     each_minute:
-      one: Cada minuta
-      other: A cada %{count} minutas
+      one: cada minuta
+      other: a cada %{count} minutas
     each_hour:
-      one: Cada hora
-      other: A cada %{count} horas
+      one: cada hora
+      other: a cada %{count} horas
     each_day:
-      one: Cada dia
-      other: A cada %{count} dias
+      one: cada dia
+      other: a cada %{count} dias
   date:
     abbr_day_names:
     - Dom
@@ -148,12 +148,12 @@ pt:
         one: 1 segundo
         other: ! '%{count} segundos'
     prompts:
-      day: Dia
-      hour: Hora
-      minute: Minuto
-      month: Mês
-      second: Segundo
-      year: Ano
+      day: dia
+      hour: hora
+      minute: minuto
+      month: mês
+      second: segundo
+      year: ano
   number:
     format:
       delimiter: .

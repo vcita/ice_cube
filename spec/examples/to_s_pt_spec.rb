@@ -43,8 +43,8 @@ describe IceCube::Schedule, 'to_s' do
   it 'should work with various sentence types properly' do
     IceCube::Rule.weekly.to_s.should == 'Cada semana'
     IceCube::Rule.weekly.day(:monday).to_s.should == 'Cada semana na segunda feira'
-    IceCube::Rule.weekly.day(:monday, :tuesday).to_s.should == 'Cada semana na segunda feira e terça feira'
-    IceCube::Rule.weekly.day(:monday, :tuesday, :wednesday).to_s.should == 'Cada semana na segunda feira, terça feira e quarta feira'
+    IceCube::Rule.weekly.day(:monday, :tuesday).to_s.should == 'Cada semana na segunda feira e na terça feira'
+    IceCube::Rule.weekly.day(:monday, :tuesday, :wednesday).to_s.should == 'Cada semana na segunda feira, na terça feira e na quarta feira'
   end
 
   it 'should show saturday and sunday as weekends' do
@@ -53,12 +53,12 @@ describe IceCube::Schedule, 'to_s' do
 
   it 'should not show saturday and sunday as weekends when other days are present also' do
     IceCube::Rule.weekly.day(:sunday, :monday, :saturday).to_s.should ==
-      'Cada semana no domingo, segunda feira e sábado'
+      'Cada semana no domingo, na segunda feira e no sábado'
   end
 
   it 'should reorganize days to be in order' do
     IceCube::Rule.weekly.day(:tuesday, :monday).to_s.should ==
-      'Cada semana na segunda feira e terça feira'
+      'Cada semana na segunda feira e na terça feira'
   end
 
   it 'should show weekdays as such' do
@@ -72,7 +72,7 @@ describe IceCube::Schedule, 'to_s' do
     IceCube::Rule.weekly.day(
       :sunday, :monday, :tuesday, :wednesday,
       :thursday, :friday
-    ).to_s.should == 'Cada semana no domingo, segunda feira, terça feira, quarta feira, quinta feira e sexta feira'
+    ).to_s.should == 'Cada semana no domingo, na segunda feira, na terça feira, na quarta feira, na quinta feira e na sexta feira'
   end
 
   it 'should work with a single date' do
