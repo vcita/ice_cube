@@ -2,7 +2,7 @@ pt:
   ice_cube:
     times:
       other: ! '%{count} vêses'
-      1: ! '%{count} vês'
+      one: ! '%{count} vês'
     pieces_connector: ! ', '
     not: excepto
     not_on: senão

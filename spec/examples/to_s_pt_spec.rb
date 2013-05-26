@@ -169,7 +169,7 @@ describe IceCube::Schedule, 'to_s' do
   it 'should be able to reflect until dates' do
     schedule = IceCube::Schedule.new(Time.now)
     schedule.rrule IceCube::Rule.weekly.until(Time.local(2012, 2, 3))
-    schedule.to_s.should == 'Cada semana até 3. Februario 2012'
+    schedule.to_s.should == 'Cada semana até 3. fevereiro 2012'
   end
 
   it 'should be able to reflect count' do
