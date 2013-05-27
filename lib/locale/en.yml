@@ -25,13 +25,13 @@ en:
       one: at the %{segments} second of the minute
     on_days: on %{days}
     days_on:
-      - sundays
-      - mondays
-      - tuesdays
-      - wednesdays
-      - thursdays
-      - fridays
-      - saturdays
+      - Sundays
+      - Mondays
+      - Tuesdays
+      - Wednesdays
+      - Thursdays
+      - Fridays
+      - Saturdays
     array:
       last_word_connector: ! ' and '
       words_connector: ! ', '
@@ -45,23 +45,23 @@ en:
         12: th
         13: th
     each_week:
-      one: Weekly
-      other: Every %{count} weeks
+      one: weekly
+      other: every %{count} weeks
     each_year:
-      one: Yearly
-      other: Every %{count} years
+      one: yearly
+      other: every %{count} years
     each_second:
-      one: Secondly
-      other: Every %{count} seconds
+      one: secondly
+      other: every %{count} seconds
     each_month:
-      one: Monthly
-      other: Every %{count} months
+      one: monthly
+      other: every %{count} months
     each_minute:
-      one: Minutely
-      other: Every %{count} minutes
+      one: minutely
+      other: every %{count} minutes
     each_hour:
-      one: Hourly
-      other: Every %{count} hours
+      one: hourly
+      other: every %{count} hours
     each_day:
-      one: Daily
-      other: Every %{count} days
+      one: daily
+      other: every %{count} days

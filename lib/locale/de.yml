@@ -42,26 +42,26 @@ de:
         -1: letzten
         -2: vorletzten
     each_week:
-      one: Wöchentlich
-      other: Alle %{count} Wochen
+      one: wöchentlich
+      other: alle %{count} Wochen
     each_year:
-      one: Jährlich
-      other: Alle %{count} Jahre
+      one: jährlich
+      other: alle %{count} Jahre
     each_second:
-      one: Sekündlich
-      other: Alle %{count} Sekunden
+      one: sekündlich
+      other: alle %{count} Sekunden
     each_month:
-      one: Monatlich
-      other: Alle %{count} Monate
+      one: monatlich
+      other: alle %{count} Monate
     each_minute:
-      one: Minütlich
-      other: Alle %{count} Minuten
+      one: minütlich
+      other: alle %{count} Minuten
     each_hour:
-      one: Stündlich
-      other: Alle %{count} Stunden
+      one: stündlich
+      other: alle %{count} Stunden
     each_day:
-      one: Täglich
-      other: Alle %{count} Tage
+      one: täglich
+      other: alle %{count} Tage
   date:
     abbr_day_names:
     - So
