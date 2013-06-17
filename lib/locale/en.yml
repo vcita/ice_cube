@@ -14,6 +14,9 @@ en:
     days_of_month:
       default: days of the month
       one: day of the month
+    days_of_year:
+      default: days of the year
+      one: day of the year
     at_hours_of_the_day:
       other: on the %{segments} hours of the day
       one: on the %{segments} hour of the day
@@ -36,6 +39,8 @@ en:
       last_word_connector: ! ' and '
       words_connector: ! ', '
     integer:
+      literal_ordinals:
+        -1: last
       ordinals:
         default: th
         1: st

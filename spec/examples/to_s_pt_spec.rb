@@ -42,9 +42,9 @@ describe IceCube::Schedule, 'to_s' do
 
   it 'should work with various sentence types properly' do
     IceCube::Rule.weekly.to_s.should == 'cada semana'
-    IceCube::Rule.weekly.day(:monday).to_s.should == 'cada semana na segunda feira'
-    IceCube::Rule.weekly.day(:monday, :tuesday).to_s.should == 'cada semana na segunda feira e na terça feira'
-    IceCube::Rule.weekly.day(:monday, :tuesday, :wednesday).to_s.should == 'cada semana na segunda feira, na terça feira e na quarta feira'
+    IceCube::Rule.weekly.day(:monday).to_s.should == 'cada semana na Segunda'
+    IceCube::Rule.weekly.day(:monday, :tuesday).to_s.should == 'cada semana na Segunda e na Terça'
+    IceCube::Rule.weekly.day(:monday, :tuesday, :wednesday).to_s.should == 'cada semana na Segunda, na Terça e na Quarta'
   end
 
   it 'should show saturday and sunday as weekends' do
@@ -53,12 +53,12 @@ describe IceCube::Schedule, 'to_s' do
 
   it 'should not show saturday and sunday as weekends when other days are present also' do
     IceCube::Rule.weekly.day(:sunday, :monday, :saturday).to_s.should ==
-      'cada semana no domingo, na segunda feira e no sábado'
+      'cada semana no Domingo, na Segunda e no Sábado'
   end
 
   it 'should reorganize days to be in order' do
     IceCube::Rule.weekly.day(:tuesday, :monday).to_s.should ==
-      'cada semana na segunda feira e na terça feira'
+      'cada semana na Segunda e na Terça'
   end
 
   it 'should show weekdays as such' do
@@ -72,7 +72,7 @@ describe IceCube::Schedule, 'to_s' do
     IceCube::Rule.weekly.day(
       :sunday, :monday, :tuesday, :wednesday,
       :thursday, :friday
-    ).to_s.should == 'cada semana no domingo, na segunda feira, na terça feira, na quarta feira, na quinta feira e na sexta feira'
+    ).to_s.should == 'cada semana no Domingo, na Segunda, na Terça, na Quarta, na Quinta e na Sexta'
   end
 
   it 'should work with a single date' do
@@ -127,7 +127,7 @@ describe IceCube::Schedule, 'to_s' do
 
   it 'should be able to say the last monday of the month' do
     rule_str = IceCube::Rule.monthly.day_of_week(:thursday => [-1]).to_s
-    rule_str.should == 'cada mês na ultima quinta feira'
+    rule_str.should == 'cada mês na ultima Quinta'
   end
 
   it 'should be able to say what months of the year something happens' do
@@ -143,39 +143,39 @@ describe IceCube::Schedule, 'to_s' do
 
   it 'should be able to say the days of the month something happens' do
     rule_str = IceCube::Rule.monthly.day_of_month(1, 15, 30).to_s
-    rule_str.should == 'cada mês no 1.o, 15.o e 30.o dia no mês'
+    rule_str.should == 'cada mês no 1o, 15o e 30o dia do mês'
   end
 
   it 'should be able to say what day of the year something happens' do
     rule_str = IceCube::Rule.yearly.day_of_year(30).to_s
-    rule_str.should == 'cada ano no 30.o dia do ano'
+    rule_str.should == 'cada ano no 30o dia do ano'
   end
 
   it 'should be able to say what hour of the day something happens' do
     rule_str = IceCube::Rule.daily.hour_of_day(6, 12).to_s
-    rule_str.should == 'cada dia na 6.a e 12.a hora do dia'
+    rule_str.should == 'cada dia na 6a e 12a hora do dia'
   end
 
   it 'should be able to say what minute of an hour something happens - with special suffix minutes' do
     rule_str = IceCube::Rule.hourly.minute_of_hour(10, 11, 12, 13, 14, 15).to_s
-    rule_str.should == 'cada hora na 10.a, 11.a, 12.a, 13.a, 14.a e 15.a minuta da hora'
+    rule_str.should == 'cada hora na 10a, 11a, 12a, 13a, 14a e 15a minuta da hora'
   end
 
   it 'should be able to say what seconds of the minute something happens' do
     rule_str = IceCube::Rule.minutely.second_of_minute(10, 11).to_s
-    rule_str.should == 'cada minuta no 10.o et 11.o segundo da minuta'
+    rule_str.should == 'cada minuta no 10o e 11o segundo da minuta'
   end
 
   it 'should be able to reflect until dates' do
     schedule = IceCube::Schedule.new(Time.now)
     schedule.rrule IceCube::Rule.weekly.until(Time.local(2012, 2, 3))
-    schedule.to_s.should == 'cada semana até 3. fevereiro 2012'
+    schedule.to_s.should == 'cada semana até 3. Fevereiro 2012'
   end
 
   it 'should be able to reflect count' do
     schedule = IceCube::Schedule.new(Time.now)
     schedule.add_recurrence_rule IceCube::Rule.weekly.count(1)
-    schedule.to_s.should == 'cada semana uma vês'
+    schedule.to_s.should == 'cada semana 1a vês'
   end
 
   it 'should be able to reflect count (proper pluralization)' do
@@ -187,7 +187,7 @@ describe IceCube::Schedule, 'to_s' do
   it 'should work when an end_time is set' do
     schedule = IceCube::Schedule.new(Time.local(2012, 8, 31), :end_time => Time.local(2012, 10, 31))
     schedule.add_recurrence_rule IceCube::Rule.daily.count(2)
-    schedule.to_s.should == 'cada dia 2as vêses até 31. Outubro 2012'
+    schedule.to_s.should == 'cada dia 2as vêses, até 31. Outubro 2012'
   end
 
 end

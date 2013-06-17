@@ -45,9 +45,9 @@ describe IceCube::Schedule, 'to_s' do
 
   it 'should work with various sentence types properly' do
     IceCube::Rule.weekly.to_s.should == 'weekly'
-    IceCube::Rule.weekly.day(:monday).to_s.should == 'Weekly on Mondays'
-    IceCube::Rule.weekly.day(:monday, :tuesday).to_s.should == 'Weekly on Mondays and Tuesdays'
-    IceCube::Rule.weekly.day(:monday, :tuesday, :wednesday).to_s.should == 'Weekly on Mondays, Tuesdays, and Wednesdays'
+    IceCube::Rule.weekly.day(:monday).to_s.should == 'weekly on Mondays'
+    IceCube::Rule.weekly.day(:monday, :tuesday).to_s.should == 'weekly on Mondays and Tuesdays'
+    IceCube::Rule.weekly.day(:monday, :tuesday, :wednesday).to_s.should == 'weekly on Mondays, Tuesdays and Wednesdays'
   end
 
   it 'should show saturday and sunday as weekends' do
@@ -68,14 +68,14 @@ describe IceCube::Schedule, 'to_s' do
     IceCube::Rule.weekly.day(
       :monday, :tuesday, :wednesday,
       :thursday, :friday
-    ).to_s.should == 'weekly on Weekdays'
+    ).to_s.should == 'weekly on weekdays'
   end
 
   it 'should not show weekdays as such when a weekend day is present' do
     IceCube::Rule.weekly.day(
       :sunday, :monday, :tuesday, :wednesday,
       :thursday, :friday
-    ).to_s.should == 'weekly on Sundays, Mondays, Tuesdays, Wednesdays, Thursdays, and Fridays'
+    ).to_s.should == 'weekly on Sundays, Mondays, Tuesdays, Wednesdays, Thursdays and Fridays'
   end
 
   it 'should show start time for an empty schedule' do
@@ -119,7 +119,7 @@ describe IceCube::Schedule, 'to_s' do
     schedule = IceCube::Schedule.new Time.local(2010, 3, 19)
     schedule.add_recurrence_time Time.local(2010, 3, 20)
     schedule.add_recurrence_rule IceCube::Rule.weekly
-    schedule.to_s.should == 'March 20, 2010 / Weekly'
+    schedule.to_s.should == 'March 20, 2010 / weekly'
   end
 
   it 'should work with rules and times and exception times' do
@@ -160,7 +160,7 @@ describe IceCube::Schedule, 'to_s' do
 
   it 'should be able to say the days of the month something happens' do
     rule_str = IceCube::Rule.monthly.day_of_month(1, 15, 30).to_s
-    rule_str.should == 'monthly on the 1st, 15th, and 30th days of the month'
+    rule_str.should == 'monthly on the 1st, 15th and 30th days of the month'
   end
 
   it 'should be able to say what day of the year something happens' do
@@ -175,7 +175,7 @@ describe IceCube::Schedule, 'to_s' do
 
   it 'should be able to say what minute of an hour something happens - with special suffix minutes' do
     rule_str = IceCube::Rule.hourly.minute_of_hour(10, 11, 12, 13, 14, 15).to_s
-    rule_str.should == 'hourly on the 10th, 11th, 12th, 13th, 14th, and 15th minutes of the hour'
+    rule_str.should == 'hourly on the 10th, 11th, 12th, 13th, 14th and 15th minutes of the hour'
   end
 
   it 'should be able to say what seconds of the minute something happens' do

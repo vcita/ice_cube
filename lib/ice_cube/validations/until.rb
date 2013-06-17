@@ -39,7 +39,7 @@ module IceCube
 
       def build_s(builder)
         # FIX: stripping blank space before localized date shouldn't be necessary
-        builder.piece(:until) << "#{I18n.t('ice_cube.until', date: I18n.l(time.to_date, format: "%e. %B %Y").strip)}"
+        builder.piece(:until) << "#{I18n.t('ice_cube.until', date: I18n.l(time.to_date).strip)}"
       end
 
       def validate(t, schedule)

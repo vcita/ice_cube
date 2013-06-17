@@ -6,15 +6,15 @@ pt:
     pieces_connector: ! ', '
     not: excepto
     not_on: senão
-    on_the: no/na
-    in: em
+    on_the: "no"
+    in: "no"
     until: até %{date}
     on_weekends: no fim da semana
     on_weekdays: em dia de útil
     days_of_month:
-      default: dias do mês
-      one: dia do mês
-    day_of_year:
+      default: dia do mês
+    days_of_year:
+      one: dia do ano
       other: dia do ano
     at_hours_of_the_day:
       other: na %{segments} hora do dia
@@ -24,17 +24,20 @@ pt:
       other: no %{segments} segundo da minuta
     on_days: ! '%{days}'
     days_on:
-      - no domingo
-      - na segunda feira
-      - na terça feira
-      - na quarta feira
-      - na quinta feira
-      - na sexta feira
-      - no sábado
+      - no Domingo
+      - na Segunda
+      - na Terça
+      - na Quarta
+      - na Quinta
+      - na Sexta
+      - no Sábado
     array:
       last_word_connector: ! ' e '
       words_connector: ! ', '
     integer:
+      literal_ordinals:
+        -1: último
+        -2: penúltimo
       ordinals:
         default: o
     each_week:
