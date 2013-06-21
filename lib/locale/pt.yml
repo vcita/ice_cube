@@ -61,6 +61,9 @@ pt:
     each_day:
       one: cada dia
       other: a cada %{count} dias
+    date:
+      formats:
+        default: ! '%-d. %B %Y'
   date:
     abbr_day_names:
     - Dom

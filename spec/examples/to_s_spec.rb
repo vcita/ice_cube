@@ -93,13 +93,13 @@ describe IceCube::Schedule, 'to_s' do
     schedule = IceCube::Schedule.new Time.local(2010, 3, 20)
     schedule.add_recurrence_time Time.local(2010, 3, 20)
     schedule.add_recurrence_time Time.local(2010, 3, 21)
-    schedule.to_s.should == 'March 20, 2010 / March 21, 2010'
+    schedule.to_s.should == 'March 20, 2010, March 21, 2010'
   end
 
   it 'should order dates that are out of order' do
     schedule = IceCube::Schedule.new(t0 = Time.local(2010, 3, 20))
     schedule.add_recurrence_time t1 = Time.local(2010, 3, 19)
-    schedule.to_s.should == 'March 19, 2010 / March 20, 2010'
+    schedule.to_s.should == 'March 19, 2010, March 20, 2010'
   end
 
   it 'should remove duplicated start time' do
@@ -112,14 +112,14 @@ describe IceCube::Schedule, 'to_s' do
     schedule = IceCube::Schedule.new t0 = Time.local(2010, 3, 19)
     schedule.add_recurrence_time Time.local(2010, 3, 20)
     schedule.add_recurrence_time Time.local(2010, 3, 20)
-    schedule.to_s.should == 'March 19, 2010 / March 20, 2010'
+    schedule.to_s.should == 'March 19, 2010, March 20, 2010'
   end
 
   it 'should work with rules and dates' do
     schedule = IceCube::Schedule.new Time.local(2010, 3, 19)
     schedule.add_recurrence_time Time.local(2010, 3, 20)
     schedule.add_recurrence_rule IceCube::Rule.weekly
-    schedule.to_s.should == 'March 20, 2010 / weekly'
+    schedule.to_s.should == 'March 20, 2010, weekly'
   end
 
   it 'should work with rules and times and exception times' do
@@ -128,7 +128,7 @@ describe IceCube::Schedule, 'to_s' do
     schedule.add_recurrence_time Time.local(2010, 3, 20)
     schedule.add_exception_time Time.local(2010, 3, 20) # ignored
     schedule.add_exception_time Time.local(2010, 3, 21)
-    schedule.to_s.should == 'weekly / not on March 20, 2010 / not on March 21, 2010'
+    schedule.to_s.should == 'weekly, not on March 20, 2010, not on March 21, 2010'
   end
 
   it 'should work with a single rrule' do

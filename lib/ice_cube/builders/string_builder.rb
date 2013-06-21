@@ -56,9 +56,11 @@ module IceCube
       end
 
       def ordinal(number)
-        I18n.t("ice_cube.integer.ordinals")[number] ||
-        I18n.t("ice_cube.integer.ordinals")[number % 10] ||
-        I18n.t('ice_cube.integer.ordinals')[:default]
+        ord = I18n.t("ice_cube.integer.ordinals")[number] ||
+          I18n.t("ice_cube.integer.ordinals")[number % 10] ||
+          I18n.t('ice_cube.integer.ordinals')[:default]
+
+        number >= 0 ? ord : I18n.t("ice_cube.integer.negative", ordinal: ord)
       end
 
       def literal_ordinal(number)
