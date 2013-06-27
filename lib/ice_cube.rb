@@ -9,7 +9,7 @@ rescue LoadError
   require 'yaml'
 end
 
-I18n.load_path << Dir['lib/locale/*{rb,yml}']
+I18n.load_path += Dir[File.expand_path('../locale/*{rb,yml}', __FILE__)]
 
 module IceCube
 
