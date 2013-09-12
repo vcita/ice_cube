@@ -77,34 +77,34 @@ describe IceCube::Schedule, 'to_s' do
 
   it 'should work with a single date' do
     schedule = IceCube::Schedule.new Time.local(2010, 3, 20)
-    schedule.add_recurrence_date Time.local(2010, 3, 20)
+    schedule.add_recurrence_time Time.local(2010, 3, 20)
     schedule.to_s.should == "20. März 2010"
   end
 
   it 'should work with additional dates' do
     schedule = IceCube::Schedule.new Time.local(2010, 3, 20)
-    schedule.add_recurrence_date Time.local(2010, 3, 20)
-    schedule.add_recurrence_date Time.local(2010, 3, 21)
+    schedule.add_recurrence_time Time.local(2010, 3, 20)
+    schedule.add_recurrence_time Time.local(2010, 3, 21)
     schedule.to_s.should == '20. März 2010, 21. März 2010'
   end
 
   it 'should order dates that are out of order' do
     schedule = IceCube::Schedule.new Time.now
-    schedule.add_recurrence_date Time.local(2010, 3, 20)
-    schedule.add_recurrence_date Time.local(2010, 3, 19)
+    schedule.add_recurrence_time Time.local(2010, 3, 20)
+    schedule.add_recurrence_time Time.local(2010, 3, 19)
     schedule.to_s.should == '19. März 2010, 20. März 2010'
   end
 
   it 'should remove duplicate rdates' do
     schedule = IceCube::Schedule.new Time.now
-    schedule.add_recurrence_date Time.local(2010, 3, 20)
-    schedule.add_recurrence_date Time.local(2010, 3, 20)
+    schedule.add_recurrence_time Time.local(2010, 3, 20)
+    schedule.add_recurrence_time Time.local(2010, 3, 20)
     schedule.to_s.should == '20. März 2010'
   end
 
   it 'should work with rules and dates' do
     schedule = IceCube::Schedule.new Time.local(2010, 3, 20)
-    schedule.add_recurrence_date Time.local(2010, 3, 20)
+    schedule.add_recurrence_time Time.local(2010, 3, 20)
     schedule.add_recurrence_rule IceCube::Rule.weekly
     schedule.to_s.should == '20. März 2010, wöchentlich'
   end
@@ -112,10 +112,10 @@ describe IceCube::Schedule, 'to_s' do
   it 'should work with rules and dates and exdates' do
     schedule = IceCube::Schedule.new Time.local(2010, 3, 20)
     schedule.add_recurrence_rule IceCube::Rule.weekly
-    schedule.add_recurrence_date Time.local(2010, 3, 20)
+    schedule.add_recurrence_time Time.local(2010, 3, 20)
     schedule.add_exception_date Time.local(2010, 3, 20) # ignored
     schedule.add_exception_date Time.local(2010, 3, 21)
-    schedule.to_s.should == 'wöchentlich, außer 20. März 2010, außer 21. März 2010'
+    schedule.to_s.should == 'wöchentlich, außer 20. März 2010 und 21. März 2010'
   end
 
   it 'should work with a single rrule' do
