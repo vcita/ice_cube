@@ -127,7 +127,7 @@ describe IceCube::Schedule, 'to_s' do
 
   it 'should be able to say the last monday of the month' do
     rule_str = IceCube::Rule.monthly.day_of_week(:thursday => [-1]).to_s
-    rule_str.should == 'cada mês na ultima Quinta'
+    rule_str.should == 'cada mês na última Quinta'
   end
 
   it 'should be able to say what months of the year something happens' do
