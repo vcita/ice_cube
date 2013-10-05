@@ -18,7 +18,7 @@ module IceCube
       attr_reader :day, :occ
 
       StringBuilder.register_formatter(:day_of_week) do |segments|
-        "#{I18n.t("ice_cube.on_the")} #{segments.join(I18n.t "ice_cube.when")}"
+        "#{I18n.t("ice_cube.on_the")} #{StringBuilder.sentence(segments)}"
       end
 
       def type

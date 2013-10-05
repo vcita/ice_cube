@@ -2,7 +2,7 @@ en:
   ice_cube:
     times:
       other: ! '%{count} times'
-      1: ! '%{count} time'
+      one: ! '%{count} time'
     pieces_connector: ! ' / '
     not: not
     not_on: not on
