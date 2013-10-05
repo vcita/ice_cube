@@ -668,16 +668,9 @@ describe IceCube::Schedule do
 
   it 'should be able to remove a count validation from a rule' do
     rule = IceCube::Rule.daily.count(5)
-    expect(rule.occurrence_count).to eq 5
     rule.count nil
-    expect(rule.occurrence_count).to raise_error
-  end
-
-  it 'should be able to remove a count validation from a rule' do
-    rule = IceCube::Rule.daily.count(5)
-    rule.to_hash[:count].should == 5
-    rule.count nil
-    rule.to_hash[:count].should be_nil
+    rule.to_hash.should_not have_key(:count)
+    rule.occurrence_count.should be_nil
   end
 
   it 'should be able to remove an until validation from a rule' do
