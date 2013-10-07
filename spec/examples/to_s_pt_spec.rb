@@ -11,8 +11,8 @@ describe IceCube::Schedule, 'to_s' do
   end
 
   it 'should have a useful base to_s representation for a minutely rule' do
-    IceCube::Rule.minutely.to_s.should == 'cada minuta'
-    IceCube::Rule.minutely(2).to_s.should == 'a cada 2 minutas'
+    IceCube::Rule.minutely.to_s.should == 'cada minuto'
+    IceCube::Rule.minutely(2).to_s.should == 'a cada 2 minutos'
   end
 
   it 'should have a useful base to_s representation for a hourly rule' do
@@ -138,32 +138,32 @@ describe IceCube::Schedule, 'to_s' do
   it 'should be able to say the second to last monday of the month' do
     pending 'penultimo'
     rule_str = IceCube::Rule.monthly.day_of_week(:thursday => [-2]).to_s
-    rule_str.should == 'cada mês onthly on the 2nd to last Thursday'
+    rule_str.should == 'cada mês na penultima Quinta'
   end
 
   it 'should be able to say the days of the month something happens' do
     rule_str = IceCube::Rule.monthly.day_of_month(1, 15, 30).to_s
-    rule_str.should == 'cada mês no 1o, 15o e 30o dia do mês'
+    rule_str.should == 'cada mês no dia 1, 15 e 30'
   end
 
   it 'should be able to say what day of the year something happens' do
     rule_str = IceCube::Rule.yearly.day_of_year(30).to_s
-    rule_str.should == 'cada ano no 30o dia do ano'
+    rule_str.should == 'cada ano no dia 30'
   end
 
   it 'should be able to say what hour of the day something happens' do
     rule_str = IceCube::Rule.daily.hour_of_day(6, 12).to_s
-    rule_str.should == 'cada dia na 6a e 12a hora do dia'
+    rule_str.should == 'cada dia na hora 6 e 12'
   end
 
   it 'should be able to say what minute of an hour something happens - with special suffix minutes' do
     rule_str = IceCube::Rule.hourly.minute_of_hour(10, 11, 12, 13, 14, 15).to_s
-    rule_str.should == 'cada hora na 10a, 11a, 12a, 13a, 14a e 15a minuta da hora'
+    rule_str.should == 'cada hora ao minuto 10, 11, 12, 13, 14 e 15'
   end
 
   it 'should be able to say what seconds of the minute something happens' do
     rule_str = IceCube::Rule.minutely.second_of_minute(10, 11).to_s
-    rule_str.should == 'cada minuta no 10o e 11o segundo da minuta'
+    rule_str.should == 'cada minuto ao segundo 10 e 11'
   end
 
   it 'should be able to reflect until dates' do
@@ -175,19 +175,19 @@ describe IceCube::Schedule, 'to_s' do
   it 'should be able to reflect count' do
     schedule = IceCube::Schedule.new(Time.now)
     schedule.add_recurrence_rule IceCube::Rule.weekly.count(1)
-    schedule.to_s.should == 'cada semana 1a vês'
+    schedule.to_s.should == 'cada semana 1 vês'
   end
 
   it 'should be able to reflect count (proper pluralization)' do
     schedule = IceCube::Schedule.new(Time.now)
     schedule.add_recurrence_rule IceCube::Rule.weekly.count(2)
-    schedule.to_s.should == 'cada semana 2as vêses'
+    schedule.to_s.should == 'cada semana 2 vêses'
   end
 
   it 'should work when an end_time is set' do
     schedule = IceCube::Schedule.new(Time.local(2012, 8, 31), :end_time => Time.local(2012, 10, 31))
     schedule.add_recurrence_rule IceCube::Rule.daily.count(2)
-    schedule.to_s.should == 'cada dia 2as vêses, até 31. Outubro 2012'
+    schedule.to_s.should == 'cada dia 2 vêses, até 31. Outubro 2012'
   end
 
 end

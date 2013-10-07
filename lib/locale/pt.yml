@@ -6,7 +6,7 @@ pt:
     pieces_connector: ! ', '
     not: excepto
     not_on: senão
-    on_the: "no"
+    on_the: "ao"
     in: "no"
     until: até %{date}
     on_weekends: no fim da semana
@@ -19,9 +19,9 @@ pt:
     at_hours_of_the_day:
       other: na %{segments} hora do dia
     at_minutes_of_hour:
-      other: na %{segments} minuta da hora
+      other: na %{segments} minuto da hora
     at_seconds_of_minute:
-      other: no %{segments} segundo da minuta
+      other: no %{segments} segundo da minuto
     on_days: ! '%{days}'
     days_on:
       - no Domingo
@@ -53,8 +53,8 @@ pt:
       one: cada mês
       other: a cada %{count} mêses
     each_minute:
-      one: cada minuta
-      other: a cada %{count} minutas
+      one: cada minuto
+      other: a cada %{count} minutos
     each_hour:
       one: cada hora
       other: a cada %{count} horas
