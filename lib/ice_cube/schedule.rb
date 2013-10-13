@@ -291,7 +291,8 @@ module IceCube
     # String serialization
     def to_s
       pieces = []
-      ed = extimes; rd = rtimes - ed
+      ed = extimes;
+      rd = recurrence_times_with_start_time - extimes
       pieces.concat rd.sort.map { |t| I18n.l(t.to_date, format: I18n.t("ice_cube.date.formats.default")) }
       pieces.concat rrules.map { |t| t.to_s }
       pieces.concat exrules.map { |t| "#{I18n.t("ice_cube.not")} #{t.to_s}" }
