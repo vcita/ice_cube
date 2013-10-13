@@ -7,13 +7,12 @@
     not: excepté
     not_on: excepté le
     on_the: le
-    in: dans
+    in: en
     until: jusqu’au %{date}
     on_weekends: les fins de semaines
     on_weekdays: les jours de semaine
     days_of_month:
-      default: jours du mois
-      one: day jour du mois
+      default: jour du mois
     days_of_year:
       default: jours de l’année
       one: jour de l’année
@@ -24,7 +23,7 @@
       other: à la %{segments} minute de l’heure
       one: à la %{segments} minute de l’heure
     at_seconds_of_minute:
-      other: à la %{segments} secondes de la minute
+      other: à la %{segments} seconde de la minute
       one: à la %{segments} seconde de la minute
     on_days: les %{days}
     days_on:
@@ -46,27 +45,36 @@
       ordinals:
         default: e
         1: er
+        11: e
+        21: e
+        31: e
+        41: e
+        51: e
+        61: e
+        71: e
+        81: e
+        91: e
     each_week:
       one: chaque semaine
-      other: toutes les %{count} semaines
+      other: aux %{count} semaines
     each_year:
       one: chaque année
-      other: toutes les %{count} années
+      other: aux %{count} ans
     each_second:
       one: chaque seconde
       other: toutes les %{count} secondes
     each_month:
       one: chaque mois
-      other: tous les %{count} mois
+      other: aux %{count} mois
     each_minute:
       one: chaque minute
       other: toutes les %{count} minutes
     each_hour:
       one: chaque heure
-      other: chaque %{count} heures
+      other: aux %{count} heures
     each_day:
       one: chaque jour
-      other: chaque %{count} jours
+      other: tous les %{count} jours
     date:
       formats:
         default: ! '%-d %B %Y'
