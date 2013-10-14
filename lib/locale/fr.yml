@@ -1,0 +1,241 @@
+fr:
+  ice_cube:
+    times:
+      other: ! '%{count} fois'
+      one: ! '%{count} fois'
+    pieces_connector: ! ' - '
+    not: excepté
+    not_on:
+      default: "excepté le "
+      exception: excepté l’
+      condition: "^[aeiou]"
+    on_the:
+      default: "le "
+      exception: l’
+      condition: "^[aeiou]"
+    in: en
+    until: jusqu’au %{date}
+    on_weekends: les weekends
+    on_weekdays: les jours ouvrés
+    days_of_month:
+      default: jour du mois
+    days_of_year:
+      default: jours de l’année
+      one: jour de l’année
+    at_hours_of_the_day:
+      other: à la %{segments} heure du jour
+      one: à la %{segments} heure du jour
+    at_minutes_of_hour:
+      other: à la %{segments} minute de l’heure
+      one: à la %{segments} minute de l’heure
+    at_seconds_of_minute:
+      other: à la %{segments} seconde de la minute
+      one: à la %{segments} seconde de la minute
+    on_days: les %{days}
+    days_on:
+      - dimanche
+      - lundi
+      - mardi
+      - mercredi
+      - jeudi
+      - vendredi
+      - samedi
+    array:
+      last_word_connector: ! ' et '
+      words_connector: ! ', '
+    integer:
+      negative: ! "%{ordinal} du dernier"
+      literal_ordinals:
+        -1: dernier
+        -2: avant dernier
+      ordinals:
+        default: e
+        1: er
+        11: e
+        21: e
+        31: e
+        41: e
+        51: e
+        61: e
+        71: e
+        81: e
+        91: e
+    each_week:
+      one: chaque semaine
+      other: aux %{count} semaines
+    each_year:
+      one: chaque année
+      other: aux %{count} ans
+    each_second:
+      one: chaque seconde
+      other: toutes les %{count} secondes
+    each_month:
+      one: chaque mois
+      other: aux %{count} mois
+    each_minute:
+      one: chaque minute
+      other: toutes les %{count} minutes
+    each_hour:
+      one: chaque heure
+      other: aux %{count} heures
+    each_day:
+      one: chaque jour
+      other: tous les %{count} jours
+    date:
+      formats:
+        default: ! '%-d %B %Y'
+  date:
+    abbr_day_names:
+    - dim
+    - lun
+    - mar
+    - mer
+    - jeu
+    - ven
+    - sam
+    abbr_month_names:
+    -
+    - janv.
+    - févr.
+    - mars
+    - avr.
+    - mai
+    - juin
+    - juil.
+    - août
+    - sept.
+    - oct.
+    - nov.
+    - déc.
+    day_names:
+    - dimanche
+    - lundi
+    - mardi
+    - mercredi
+    - jeudi
+    - vendredi
+    - samedi
+    formats:
+      default: ! '%Y-%m-%d'
+      long: ! '%d %B %Y'
+      short: ! '%d %b'
+    month_names:
+    -
+    - janvier
+    - février
+    - mars
+    - avril
+    - mai
+    - juin
+    - juillet
+    - août
+    - septembre
+    - octobre
+    - novembre
+    - décembre
+    order:
+    - :year
+    - :month
+    - :day
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: environs 1 heure
+        other: environs %{count} heures
+      about_x_months:
+        one: environs 1 mois
+        other: environs %{count} mois
+      about_x_years:
+        one: environs 1 an
+        other: environs %{count} ans
+      almost_x_years:
+        one: presque 1 an
+        other: presque %{count} ans
+      half_a_minute: 30 secondes
+      less_than_x_minutes:
+        one: moins d’une minute
+        other: moins de %{count} minutes
+      less_than_x_seconds:
+        one: moins d’une seconde
+        other: moins de %{count} secondes
+      over_x_years:
+        one: plus d’un an
+        other: plus de %{count} ans
+      x_days:
+        one: 1 jour
+        other: ! '%{count} jours'
+      x_minutes:
+        one: 1 minute
+        other: ! '%{count} minutes'
+      x_months:
+        one: 1 mois
+        other: ! '%{count} mois'
+      x_seconds:
+        one: 1 seconde
+        other: ! '%{count} secondes'
+    prompts:
+      day: Jour
+      hour: Heure
+      minute: Minute
+      month: Mois
+      second: Secondes
+      year: Année
+  number:
+    currency:
+      format:
+        delimiter: ! ' '
+        format: ! '%n%u'
+        precision: 2
+        separator: ','
+        significant: false
+        strip_insignificant_zeros: false
+        unit: €
+    format:
+      delimiter: ! ' '
+      precision: 3
+      separator: ','
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: ! '%n %u'
+        units:
+          billion: Milliard
+          million: Million
+          quadrillion: Billiard
+          thousand: Mille
+          trillion: Billion
+          unit: ''
+      format:
+        delimiter: ''
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: ! '%n %u'
+        units:
+          byte:
+            one: Octet
+            other: Octets
+          gb: Go
+          kb: Ko
+          mb: Mo
+          tb: To
+    percentage:
+      format:
+        delimiter: ''
+    precision:
+      format:
+        delimiter: ''
+  support:
+    array:
+      last_word_connector: ! ', et '
+      two_words_connector: ! ' et '
+      words_connector: ! ', '
+  time:
+    am: am
+    formats:
+      default: ! '%a, %d %b %Y %H:%M:%S %z'
+      long: ! '%d %B %Y %H:%M'
+      short: ! '%d %b %H:%M'
+    pm: pm
