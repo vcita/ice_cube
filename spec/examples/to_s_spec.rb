@@ -128,7 +128,7 @@ describe IceCube::Schedule, 'to_s' do
     schedule.add_recurrence_time Time.local(2010, 3, 20)
     schedule.add_exception_time Time.local(2010, 3, 20) # ignored
     schedule.add_exception_time Time.local(2010, 3, 21)
-    schedule.to_s.should == 'weekly, not on March 20, 2010, not on March 21, 2010'
+    schedule.to_s.should == 'weekly, not on March 20, 2010 and March 21, 2010'
   end
 
   it 'should work with a single rrule' do
@@ -150,7 +150,7 @@ describe IceCube::Schedule, 'to_s' do
 
   it 'should be able to say the second to last monday of the month' do
     rule_str = IceCube::Rule.monthly.day_of_week(:thursday => [-2]).to_s
-    rule_str.should == 'monthly on the 2nd to last Thursday'
+    rule_str.should == 'monthly on the second to last Thursday'
   end
 
   it 'should join the first and last weekdays of the month' do
@@ -175,12 +175,12 @@ describe IceCube::Schedule, 'to_s' do
 
   it 'should be able to say what minute of an hour something happens - with special suffix minutes' do
     rule_str = IceCube::Rule.hourly.minute_of_hour(10, 11, 12, 13, 14, 15).to_s
-    rule_str.should == 'hourly on the 10th, 11th, 12th, 13th, 14th and 15th minutes of the hour'
+    rule_str.should == 'hourly at the 10th, 11th, 12th, 13th, 14th and 15th minutes of the hour'
   end
 
   it 'should be able to say what seconds of the minute something happens' do
     rule_str = IceCube::Rule.minutely.second_of_minute(10, 11).to_s
-    rule_str.should == 'minutely on the 10th and 11th seconds of the minute'
+    rule_str.should == 'minutely at the 10th and 11th seconds of the minute'
   end
 
   it 'should be able to reflect until dates' do

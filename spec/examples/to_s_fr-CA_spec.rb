@@ -140,7 +140,7 @@ describe IceCube::Schedule, 'to_s' do
 
   it 'should be able to say the last monday of the month' do
     rule_str = IceCube::Rule.monthly.day_of_week(:thursday => [-1]).to_s
-    rule_str.should == 'le dernier jeudi de chaque mois'
+    rule_str.should == 'chaque mois le dernier jeudi'
   end
 
   it 'should be able to say what months of the year something happens' do
@@ -150,7 +150,7 @@ describe IceCube::Schedule, 'to_s' do
 
   it 'should be able to say the second to last monday of the month' do
     rule_str = IceCube::Rule.monthly.day_of_week(:thursday => [-2]).to_s
-    rule_str.should == 'l’avant dernier jeudi de chaque mois'
+    rule_str.should == 'chaque mois l’avant dernier jeudi'
   end
 
   it 'should join the first and last weekdays of the month' do
