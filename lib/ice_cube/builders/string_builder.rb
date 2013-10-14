@@ -48,6 +48,17 @@ module IceCube
         [enumeration, final].compact.join(I18n.t 'ice_cube.array.last_word_connector')
       end
 
+      def connected_sentence(array, connector)
+        sentence = self.sentence(array)
+        if connector.is_a? Hash
+          on_the = (sentence !~ Regexp.new("^[#{Regexp.quote(connector[:condition])}]")) ? connector[:default] : connector[:exception]
+        else
+          on_the = "#{connector} "
+        end
+
+        "#{on_the}#{sentence} "
+      end
+
       def nice_number(number)
         literal_ordinal(number) || ordinalize(number)
       end

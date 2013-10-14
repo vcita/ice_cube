@@ -18,7 +18,7 @@ module IceCube
       attr_reader :day
 
       StringBuilder.register_formatter(:day_of_year) do |entries|
-        str = "#{I18n.t("ice_cube.on_the")} #{StringBuilder.sentence(entries)} "
+        str = StringBuilder.connected_sentence(entries, I18n.t("ice_cube.on_the"))
         str << (entries.size == 1 ? I18n.t("ice_cube.days_of_year.one") : I18n.t("ice_cube.days_of_year.default"))
         str
       end

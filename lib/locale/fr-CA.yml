@@ -5,8 +5,14 @@
       one: ! '%{count} fois'
     pieces_connector: ! ' - '
     not: excepté
-    not_on: excepté le
-    on_the: le
+    not_on:
+      default: "excepté le "
+      exception: excepté l’
+      condition: "^[aeiou]"
+    on_the:
+      default: "le "
+      exception: l’
+      condition: "^[aeiou]"
     in: en
     until: jusqu’au %{date}
     on_weekends: les fins de semaines
