@@ -46,6 +46,11 @@ module IceCube
         builder['BYSECOND'] << second
       end
 
+      StringBuilder.register_formatter(:second_of_minute) do |segments|
+        str = "on the #{StringBuilder.sentence(segments)} "
+        str << (segments.size == 1 ? 'second of the minute' : 'seconds of the minute')
+      end
+
     end
 
   end
