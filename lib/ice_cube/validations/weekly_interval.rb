@@ -45,10 +45,6 @@ module IceCube
         (interval - offset) * 7 if offset
       end
 
-      def build_s(builder)
-        builder.base = interval == 1 ? 'Weekly' : "Every #{interval} weeks"
-      end
-
       def build_hash(builder)
         builder[:interval] = interval
         builder[:week_start] = TimeUtil.sym_to_wday(week_start)

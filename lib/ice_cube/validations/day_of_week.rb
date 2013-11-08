@@ -48,10 +48,6 @@ module IceCube
         end
       end
 
-      def build_s(builder)
-        builder.piece(:day_of_week) << "#{StringBuilder.nice_number(occ)} #{Date::DAYNAMES[day]}"
-      end
-
       def build_hash(builder)
         builder.validations[:day_of_week] ||= {}
         arr = (builder.validations[:day_of_week][day] ||= [])

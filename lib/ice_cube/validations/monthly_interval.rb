@@ -33,9 +33,6 @@ module IceCube
         interval - offset if offset
       end
 
-      def build_s(builder)
-        builder.base = interval == 1 ? 'Monthly' : "Every #{interval} months"
-      end
 
       def build_hash(builder)
         builder[:interval] = interval
