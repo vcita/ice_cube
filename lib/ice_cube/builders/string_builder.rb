@@ -60,13 +60,6 @@ module IceCube
 
       def literal_ordinal(number)
         I18n.t("ice_cube.integer.literal_ordinals")[number]
-        return 'last' if number == -1
-        suffix = SPECIAL_SUFFIX[number] || NUMBER_SUFFIX[number.abs % 10]
-        if number < -1
-          number.abs.to_s << suffix << ' to last'
-        else
-          number.to_s << suffix
-        end
       end
 
     end
