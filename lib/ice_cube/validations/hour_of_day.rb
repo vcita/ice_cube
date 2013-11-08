@@ -45,11 +45,6 @@ module IceCube
         builder['BYHOUR'] << hour
       end
 
-      StringBuilder.register_formatter(:hour_of_day) do |segments|
-        str = "on the #{StringBuilder.sentence(segments)} "
-        str << (segments.size == 1 ? 'hour of the day' : 'hours of the day')
-      end
-
     end
 
   end

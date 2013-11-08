@@ -50,12 +50,6 @@ module IceCube
         builder['BYYEARDAY'] << day
       end
 
-      StringBuilder.register_formatter(:day_of_year) do |entries|
-        str = "on the #{StringBuilder.sentence(entries)} "
-        str << (entries.size == 1 ? 'day of the year' : 'days of the year')
-        str
-      end
-
     end
 
   end

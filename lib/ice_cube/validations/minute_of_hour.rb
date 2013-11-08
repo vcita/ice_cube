@@ -44,11 +44,6 @@ module IceCube
         builder['BYMINUTE'] << minute
       end
 
-      StringBuilder.register_formatter(:minute_of_hour) do |segments|
-        str = "on the #{StringBuilder.sentence(segments)} "
-        str << (segments.size == 1 ? 'minute of the hour' : 'minutes of the hour')
-      end
-
     end
 
   end

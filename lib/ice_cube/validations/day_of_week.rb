@@ -61,10 +61,6 @@ module IceCube
         builder['BYDAY'] << "#{occ}#{ical_day}"
       end
 
-      StringBuilder.register_formatter(:day_of_week) do |segments|
-        'on the ' + segments.join(' and ')
-      end
-
     end
 
   end
