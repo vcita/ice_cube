@@ -13,6 +13,10 @@ module IceCube
     end
 
     def to_s
+      # Put the count at the end for better translation
+      count = @types.delete(:count)
+      @types.merge!({ count: count }) if count
+
       @types.each_with_object(@base || '') do |(type, segments), str|
         if f = self.class.formatter(type)
           str << ' ' << f.call(segments)
