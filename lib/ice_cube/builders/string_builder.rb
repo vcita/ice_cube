@@ -13,32 +13,30 @@ module IceCube
     end
 
     def to_s
-      str = @base || ''
-      res = @types.map do |type, segments|
+      # Put the count at the end for better translation
+      count = @types.delete(:count)
+      @types.merge!({ count: count }) if count
+
+      @types.each_with_object(@base || '') do |(type, segments), str|
         if f = self.class.formatter(type)
-          str << ' ' + f.call(segments)
+          str << ' ' << f.call(segments)
         else
           next if segments.empty?
-          str << ' ' + self.class.sentence(segments)
+          str << ' ' << self.class.sentence(segments)
         end
       end
-      str
     end
 
-    class << self
-
-      def formatter(type)
-        @formatters[type]
-      end
-
-      def register_formatter(type, &formatter)
-        @formatters ||= {}
-        @formatters[type] = formatter
-      end
-
+    def self.formatter(type)
+      @formatters[type]
     end
 
-    class << self
+    def self.register_formatter(type, &formatter)
+      @formatters ||= {}
+      @formatters[type] = formatter
+    end
+
+    module Helpers
 
       # influenced by ActiveSupport's to_sentence
       def sentence(array)
@@ -69,6 +67,8 @@ module IceCube
       end
 
     end
+
+    extend Helpers
 
   end
 

@@ -2,8 +2,6 @@ module IceCube
 
   module Validations::HourOfDay
 
-    include Validations::Lock
-
     # Add hour of day validations
     def hour_of_day(*hours)
       hours.flatten.each do |hour|
@@ -31,12 +29,12 @@ module IceCube
         @hour = hour
       end
 
-      def build_s(builder)
-        builder.piece(:hour_of_day) << StringBuilder.nice_number(hour)
-      end
-
       def type
         :hour
+      end
+
+      def build_s(builder)
+        builder.piece(:hour_of_day) << StringBuilder.nice_number(hour)
       end
 
       def build_hash(builder)

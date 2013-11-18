@@ -290,10 +290,10 @@ https://github.com/GetJobber/recurring_select
 
 ## Contributors
 
+* Andrew Vit ([@avit][github-avit])
 * Mat Brown - mat@patch.com
 * Philip Roberts
 * @sakrafd
-* Andrew Vit ([@avit][github-avit])
 
 ---
 

@@ -2,8 +2,6 @@ module IceCube
 
   module Validations::DayOfMonth
 
-    include Validations::Lock
-
     def day_of_month(*days)
       days.flatten.each do |day|
         unless day.is_a?(Fixnum)
@@ -32,6 +30,10 @@ module IceCube
         @day = day
       end
 
+      def type
+        :day
+      end
+
       def build_s(builder)
         builder.piece(:day_of_month) << StringBuilder.nice_number(day)
       end
@@ -42,10 +44,6 @@ module IceCube
 
       def build_ical(builder)
         builder['BYMONTHDAY'] << day
-      end
-
-      def type
-        :day
       end
 
     end

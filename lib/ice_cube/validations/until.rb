@@ -2,9 +2,9 @@ module IceCube
 
   module Validations::Until
 
-    extend ::Deprecated
+    extend Deprecated
 
-    # accessor
+    # Value reader for limit
     def until_time
       @until
     end
@@ -21,20 +21,16 @@ module IceCube
 
       attr_reader :time
 
-      def type
-        :dealbreaker
-      end
-
       def initialize(time)
         @time = time
       end
 
-      def build_ical(builder)
-        builder['UNTIL'] << IcalBuilder.ical_utc_format(time)
+      def type
+        :limit
       end
 
-      def build_hash(builder)
-        builder[:until] = TimeUtil.serialize_time(time)
+      def validate(step_time, schedule)
+        raise UntilExceeded if step_time > time
       end
 
       def build_s(builder)
@@ -42,8 +38,12 @@ module IceCube
         builder.piece(:until) << "#{I18n.t('ice_cube.until', date: I18n.l(time.to_date, format: I18n.t("ice_cube.date.formats.default")).strip)}"
       end
 
-      def validate(t, schedule)
-        raise UntilExceeded if t > time
+      def build_hash(builder)
+        builder[:until] = TimeUtil.serialize_time(time)
+      end
+
+      def build_ical(builder)
+        builder['UNTIL'] << IcalBuilder.ical_utc_format(time)
       end
 
     end

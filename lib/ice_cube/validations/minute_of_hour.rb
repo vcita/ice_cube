@@ -2,8 +2,6 @@ module IceCube
 
   module Validations::MinuteOfHour
 
-    include Validations::Lock
-
     def minute_of_hour(*minutes)
       minutes.flatten.each do |minute|
         unless minute.is_a?(Fixnum)
@@ -30,12 +28,12 @@ module IceCube
         @minute = minute
       end
 
-      def build_s(builder)
-        builder.piece(:minute_of_hour) << StringBuilder.nice_number(minute)
-      end
-
       def type
         :min
+      end
+
+      def build_s(builder)
+        builder.piece(:minute_of_hour) << StringBuilder.nice_number(minute)
       end
 
       def build_hash(builder)
