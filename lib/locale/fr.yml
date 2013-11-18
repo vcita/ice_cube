@@ -15,8 +15,8 @@ fr:
       condition: "^[aeiou]"
     in: en
     until: jusqu’au %{date}
-    on_weekends: les weekends
-    on_weekdays: les jours ouvrés
+    on_weekends: les fins de semaine
+    on_weekdays: les jours de semaine
     days_of_month:
       default: jour du mois
     days_of_year:

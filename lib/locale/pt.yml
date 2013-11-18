@@ -7,7 +7,7 @@ pt:
     not: excepto
     not_on: senão
     on_the: "ao"
-    in: "no"
+    in: "ao"
     until: até %{date}
     on_weekends: no fim da semana
     on_weekdays: em dia de útil
@@ -17,11 +17,11 @@ pt:
       one: dia do ano
       other: dia do ano
     at_hours_of_the_day:
-      other: na %{segments} hora do dia
+      other: na hora %{segments}
     at_minutes_of_hour:
-      other: na %{segments} minuto da hora
+      other: ao minuto %{segments}
     at_seconds_of_minute:
-      other: no %{segments} segundo da minuto
+      other: ao segundo %{segments}
     on_days: ! '%{days}'
     days_on:
       - no Domingo
@@ -39,7 +39,7 @@ pt:
         -1: último
         -2: penúltimo
       ordinals:
-        default: o
+        default: ""
     each_week:
       one: cada semana
       other: a cada %{count} semanas

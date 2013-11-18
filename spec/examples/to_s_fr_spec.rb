@@ -1,7 +1,7 @@
 require File.dirname(__FILE__) + '/../spec_helper'
 
 describe IceCube::Schedule, 'to_s' do
-  before(:each) { I18n.locale = :'fr' }
+  before(:each) { I18n.locale = :fr }
 
   it 'should represent its start time by default' do
     t0 = Time.local(2013, 2, 14)
@@ -51,7 +51,7 @@ describe IceCube::Schedule, 'to_s' do
   end
 
   it 'should show saturday and sunday as weekends' do
-    IceCube::Rule.weekly.day(:saturday, :sunday).to_s.should == 'chaque semaine les weekends'
+    IceCube::Rule.weekly.day(:saturday, :sunday).to_s.should == 'chaque semaine les fins de semaine'
   end
 
   it 'should not show saturday and sunday as weekends when other days are present also' do
@@ -68,7 +68,7 @@ describe IceCube::Schedule, 'to_s' do
     IceCube::Rule.weekly.day(
       :monday, :tuesday, :wednesday,
       :thursday, :friday
-    ).to_s.should == 'chaque semaine les jours ouvrés'
+    ).to_s.should == 'chaque semaine les jours de semaine'
   end
 
   it 'should not show weekdays as such when a weekend day is present' do
