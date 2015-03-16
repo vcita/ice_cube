@@ -30,7 +30,7 @@ fr:
       - samedi
     times:
       other: '%{count} fois'
-      one: '%{count} foid'
+      one: '%{count} fois'
     until: "jusqu'a %{date}"
     days_of_week: '%{segments} %{day}'
     days_of_month:
