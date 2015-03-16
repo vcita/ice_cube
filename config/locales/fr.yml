@@ -1,11 +1,11 @@
 fr:
   ice_cube:
     pieces_connector: ' / '
-    not: 'ne %{target} pas'
-    not_on: 'not on %{target}'
+    not: 'sauf %{target}'
+    not_on: 'sauf le %{target}'
     date:
       formats:
-        default: '%B %-d, %Y'
+        default: '%-d %B %Y'
       month_names:
       -
       - janvier
@@ -31,60 +31,60 @@ fr:
     times:
       other: '%{count} fois'
       one: '%{count} fois'
-    until: "jusqu'a %{date}"
+    until: "jusqu'à %{date}"
     days_of_week: '%{segments} %{day}'
     days_of_month:
-      other: '%{segments} days of the month'
-      one: '%{segments} day of the month'
+      other: 'les %{segments} du mois'
+      one: 'le %{segments} du mois'
     days_of_year:
-      other: '%{segments} days of the year'
-      one: '%{segments} day of the year'
+      other: "les %{segments} de l'année"
+      one: "le %{segments} de l'année"
     at_hours_of_the_day:
-      other: on the %{segments} hours of the day
-      one: on the %{segments} hour of the day
+      other: "à %{segments} heures"
+      one: "à %{segments} heures"
     on_minutes_of_hour:
-      other: on the %{segments} minutes of the hour
-      one: on the %{segments} minute of the hour
+      other: "aux minutes %{segments} de chaque heure"
+      one: "à la minute %{segments} de chaque heure"
     at_seconds_of_minute:
-      other: at the %{segments} seconds
-      one: at the %{segments} second
+      other: aux secondes %{segments}
+      one: à la seconde %{segments}
     on_seconds_of_minute:
-      other: on the %{segments} seconds of the minute
-      one: on the %{segments} second of the minute
+      other: "aux secondes %{segments} de chaque minutes"
+      one: "à la seconde %{segments} de chaque minutes"
     each_second:
-      one: en second lieu
+      one: chaque seconde
       other: toutes les %{count} secondes
     each_minute:
       one: chaque minute
       other: toutes les %{count} minutes
     each_hour:
-      one: chaque heur
+      one: chaque heure
       other: toutes les %{count} heures
     each_day:
-      one: tous les jours
+      one: chaque jour
       other: tous les %{count} jours
     each_week:
-      one: hebdomadaire
+      one: chaque semaine
       other: toutes les %{count} semaines
     each_month:
-      one: mensuel
+      one: chaque mois
       other: tous les %{count} mois
     each_year:
-      one: annuellement
+      one: chaque année
       other: tous les %{count} ans
-    'on': on the %{sentence}
-    in: 'in %{target}'
+    'on': en %{sentence}
+    in: 'en %{target}'
     integer:
-      negative: '%{ordinal} to last'
+      negative: '%{ordinal} avant la fin'
       literal_ordinals:
-        -1: last
-        -2: 2nd to last
+        -1: dernier
+        -2: avant-dernier
       ordinal: '%{number}%{ordinal}'
       ordinals:
         default: e
         1: er
-    on_weekends: on Weekends
-    on_weekdays: on Weekdays
+    on_weekends: les weekends
+    on_weekdays: les jours de semaine
     days_on:
       - dimanche
       - lundi
@@ -93,10 +93,10 @@ fr:
       - jeudi
       - vendredi
       - samedi
-    on_days: on %{days}
+    on_days: le %{days}
     array:
-      last_word_connector: ', and '
-      two_words_connector: ' and '
+      last_word_connector: ', et '
+      two_words_connector: ' et '
       words_connector: ', '
     string:
       format:
