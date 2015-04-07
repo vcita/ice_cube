@@ -52,26 +52,26 @@ de:
       other: an %{segments} Sekunde der Minute
       one: an %{segments} Sekunden der Minute
     each_second:
-      one: Sekündlich
-      other: Alle %{count} Sekunden
+      one: sekündlich
+      other: alle %{count} Sekunden
     each_minute:
-      one: Minütlich
-      other: Alle %{count} Minuten
+      one: minütlich
+      other: alle %{count} Minuten
     each_hour:
-      one: Stündlich
-      other: Alle %{count} Stunden
+      one: stündlich
+      other: alle %{count} Stunden
     each_day:
-      one: Täglich
-      other: Alle %{count} Tage
+      one: täglich
+      other: alle %{count} Tage
     each_week:
-      one: Wöchentlich
-      other: Alle %{count} Wochen
+      one: wöchentlich
+      other: alle %{count} Wochen
     each_month:
-      one: Monatlich
-      other: Alle %{count} Monate
+      one: monatlich
+      other: alle %{count} Monate
     each_year:
-      one: Jährlich
-      other: Alle %{count} Jahre
+      one: jährlich
+      other: alle %{count} Jahre
     'on': am %{sentence}
     in: 'im %{target}'
     integer:
@@ -91,13 +91,13 @@ de:
     on_weekends: an Wochenenden
     on_weekdays: an Wochentagen
     days_on:
-      - Sonntags
-      - Montags
-      - Dienstags
-      - Mittwochs
-      - Donnerstags
-      - Freitags
-      - Samstags
+      - sonntags
+      - montags
+      - dienstags
+      - mittwochs
+      - donnerstags
+      - freitags
+      - samstags
     on_days: ": %{days}"
     array:
       last_word_connector: ', und '
