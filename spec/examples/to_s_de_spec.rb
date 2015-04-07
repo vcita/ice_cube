@@ -49,9 +49,9 @@ describe IceCube::Schedule, 'to_s' do
 
   it 'should work with various sentence types properly' do
     IceCube::Rule.weekly.to_s.should == 'Wöchentlich'
-    IceCube::Rule.weekly.day(:monday).to_s.should == 'Wöchentlich: Montags'
-    IceCube::Rule.weekly.day(:monday, :tuesday).to_s.should == 'Wöchentlich: Montags und Dienstags'
-    IceCube::Rule.weekly.day(:monday, :tuesday, :wednesday).to_s.should == 'Wöchentlich: Montags, Dienstags, und Mittwochs'
+    IceCube::Rule.weekly.day(:monday).to_s.should == 'Wöchentlich : Montags'
+    IceCube::Rule.weekly.day(:monday, :tuesday).to_s.should == 'Wöchentlich : Montags und Dienstags'
+    IceCube::Rule.weekly.day(:monday, :tuesday, :wednesday).to_s.should == 'Wöchentlich : Montags, Dienstags, und Mittwochs'
   end
 
   it 'should show saturday and sunday as weekends' do
@@ -60,12 +60,12 @@ describe IceCube::Schedule, 'to_s' do
 
   it 'should not show saturday and sunday as weekends when other days are present also' do
     IceCube::Rule.weekly.day(:sunday, :monday, :saturday).to_s.should ==
-      'Wöchentlich: Sonntags, Montags, und Samstags'
+      'Wöchentlich : Sonntags, Montags, und Samstags'
   end
 
   it 'should reorganize days to be in order' do
     IceCube::Rule.weekly.day(:tuesday, :monday).to_s.should ==
-      'Wöchentlich: Montags und Dienstags'
+      'Wöchentlich : Montags und Dienstags'
   end
 
   it 'should show weekdays as such' do
@@ -79,7 +79,7 @@ describe IceCube::Schedule, 'to_s' do
     IceCube::Rule.weekly.day(
       :sunday, :monday, :tuesday, :wednesday,
       :thursday, :friday
-    ).to_s.should == 'Wöchentlich: Sonntags, Montags, Dienstags, Mittwochs, Donnerstags, und Freitags'
+    ).to_s.should == 'Wöchentlich : Sonntags, Montags, Dienstags, Mittwochs, Donnerstags, und Freitags'
   end
 
   it 'should show start time for an empty schedule' do
