@@ -2,10 +2,10 @@ de:
   ice_cube:
     pieces_connector: ' / '
     not: 'nicht %{target}'
-    not_on: 'nicht an %{target}'
+    not_on: 'nicht am %{target}'
     date:
       formats:
-        default: '%B %-d, %Y'
+        default: '%-d. %B %Y'
       month_names:
       -
       - Januar
@@ -40,17 +40,17 @@ de:
       other: '%{segments} Tagen des Jahres'
       one: '%{segments} Tag des Jahres'
     at_hours_of_the_day:
-      other: an den Stunden %{segments} des Tages
+      other: an den %{segments} Stunden des Tages
       one: an Stunde %{segments} des Tages
     on_minutes_of_hour:
-      other: an den Minuten %{segments} der Stunde
+      other: an den %{segments} Minuten der Stunde
       one: an der Minute %{segments} der Stunde
     at_seconds_of_minute:
       other: an den %{segments} Sekunden
       one: an Sekunde %{segments}
     on_seconds_of_minute:
-      other: an Sekunde %{segments} der Minute
-      one: an Sekunden %{segments} der Minute
+      other: an %{segments} Sekunde der Minute
+      one: an %{segments} Sekunden der Minute
     each_second:
       one: Sekündlich
       other: Alle %{count} Sekunden
@@ -62,7 +62,7 @@ de:
       other: Alle %{count} Stunden
     each_day:
       one: Täglich
-      other: Jeden %{count} Tag
+      other: Alle %{count} Tage
     each_week:
       one: Wöchentlich
       other: Alle %{count} Wochen
@@ -73,12 +73,12 @@ de:
       one: Jährlich
       other: Alle %{count} Jahre
     'on': am %{sentence}
-    in: 'in %{target}'
+    in: 'im %{target}'
     integer:
       negative: '%{ordinal} letzten'
       literal_ordinals:
         -1: letzten
-        -2: vorletzter
+        -2: vorletzten
       ordinal: '%{number}%{ordinal}'
       ordinals:
         default: .
@@ -93,12 +93,12 @@ de:
     days_on:
       - Sonntags
       - Montags
-      - Diensags
+      - Dienstags
       - Mittwochs
       - Donnerstags
       - Freitags
       - Samstags
-    on_days: an %{days}
+    on_days: ": %{days}"
     array:
       last_word_connector: ', und '
       two_words_connector: ' und '
