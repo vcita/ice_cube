@@ -1,107 +1,102 @@
 pt:
   ice_cube:
     pieces_connector: ' / '
-    not: 'not %{target}'
-    not_on: 'not on %{target}'
+    not: 'excepto %{target}'
+    not_on: 'excepto em %{target}'
     date:
       formats:
-        default: '%B %-d, %Y'
-      month_names: &month_names
-        - 
-        - Janeiro
-        - Fevereiro
-        - Março
-        - Abril
-        - Maio
-        - Junho
-        - Julho
-        - Agosto
-        - Setembro
-        - Outubro
-        - Novembro
-        - Dezembro
-      day_names: &day_names
-        - Domingo
-        - Segunda
-        - Terça
-        - Quarta
-        - Quinta
-        - Sexta
-        - Sábado
+        default: '%-d %B %Y'
+      month_names:
+      - Janeiro 
+      - Fevereiro
+      - Março
+      - Abril
+      - Maio
+      - Junho
+      - Julho
+      - Agosto
+      - Setembro
+      - Outubro
+      - Novembro
+      - Dezembro
+      day_names:
+      - Domingo
+      - Segunda
+      - Terça
+      - Quarta
+      - Quinta
+      - Sexta
+      - Sábado
     times:
-      other: '%{count} times'
-      one: '%{count} time'
-    until: 'until %{date}'
+      other: '%{count} vezes'
+      one: '%{count} vez'
+    until: "até %{date}"
     days_of_week: '%{segments} %{day}'
     days_of_month:
-      other: '%{segments} days of the month'
-      one: '%{segments} day of the month'
+      other: 'os dias %{segments} do mês'
+      one: 'o dia %{segments} do mês'
     days_of_year:
-      other: '%{segments} days of the year'
-      one: '%{segments} day of the year'
+      other: "os dias %{segments} do ano"
+      one: "o dia %{segments} do ano"
     at_hours_of_the_day:
-      other: on the %{segments} hours of the day
-      one: on the %{segments} hour of the day
+      other: "nas horas %{segments}"
+      one: "na hora %{segments}"
     on_minutes_of_hour:
-      other: on the %{segments} minutes of the hour
-      one: on the %{segments} minute of the hour
+      other: "aux minutes %{segments} de chaque heure"
+      one: "à la minute %{segments} de chaque heure"
     at_seconds_of_minute:
-      other: at the %{segments} seconds
-      one: at the %{segments} second
+      other: aux secondes %{segments}
+      one: à la seconde %{segments}
     on_seconds_of_minute:
-      other: on the %{segments} seconds of the minute
-      one: on the %{segments} second of the minute
+      other: "aux secondes %{segments} de chaque minutes"
+      one: "à la seconde %{segments} de chaque minutes"
     each_second:
-      one: Secondly
-      other: Every %{count} seconds
+      one: cada segundo
+      other: cada %{count} segundos
     each_minute:
-      one: Minutely
-      other: Every %{count} minutes
+      one: cada minuto
+      other: cada %{count} minutos
     each_hour:
-      one: Hourly
-      other: Every %{count} hours
+      one: cada hora
+      other: cada %{count} horas
     each_day:
-      one: Daily
-      other: Every %{count} days
+      one: cada dia
+      other: cada %{count} dias
     each_week:
-      one: Weekly
-      other: Every %{count} weeks
+      one: cada semana
+      other: cada %{count} semanas
     each_month:
-      one: Monthly
-      other: Every %{count} months
+      one: cada mês
+      other: cada %{count} meses
     each_year:
-      one: Yearly
-      other: Every %{count} years
-    'on': on the %{sentence}
-    in: 'in %{target}'
+      one: cada ano
+      other: cada %{count} anos
+    'on': en %{sentence}
+    in: 'en %{target}'
     integer:
-      negative: '%{ordinal} to last'
+      negative: '%{ordinal} avant la fin'
       literal_ordinals:
-        -1: last
-        -2: 2nd to last
+        -1: penúltimo
+        -2: antepenúltimo
       ordinal: '%{number}%{ordinal}'
       ordinals:
-        default: th
-        1: st
-        2: nd
-        3: rd
-        11: th
-        12: th
-        13: th
-    on_weekends: on Weekends
-    on_weekdays: on Weekdays
+        default: e
+        1: er
+    on_weekends: les weekends
+    on_weekdays: les jours de semaine
     days_on:
-      - Sundays
-      - Mondays
-      - Tuesdays
-      - Wednesdays
-      - Thursdays
-      - Fridays
-      - Saturdays
-    on_days: on %{days}
+      - domingo
+      - segunda
+      - terça
+      - quarta
+      - quinta
+      - sexta
+      - sábado
+    on_days: le %{days}
     array:
-      last_word_connector: ', and '
-      two_words_connector: ' and '
+      last_word_connector: ', et '
+      two_words_connector: ' et '
+>>>>>>> Stashed changes
       words_connector: ', '
     string:
       format:
@@ -114,6 +109,7 @@ pt:
         until: '%{rest} %{current}'
         count: '%{rest} %{current}'
         default: '%{rest} %{current}'
+<<<<<<< Updated upstream
   date:
     abbr_day_names:
     - Dom
@@ -124,7 +120,6 @@ pt:
     - Sex
     - Sáb
     abbr_month_names:
-    - 
     - Jan
     - Fev
     - Mar
