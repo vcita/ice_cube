@@ -96,7 +96,6 @@ pt:
     array:
       last_word_connector: ', et '
       two_words_connector: ' et '
->>>>>>> Stashed changes
       words_connector: ', '
     string:
       format:
@@ -109,7 +108,6 @@ pt:
         until: '%{rest} %{current}'
         count: '%{rest} %{current}'
         default: '%{rest} %{current}'
-<<<<<<< Updated upstream
   date:
     abbr_day_names:
     - Dom
