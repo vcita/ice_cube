@@ -34,23 +34,23 @@ pt:
     until: "até %{date}"
     days_of_week: '%{segments} %{day}'
     days_of_month:
-      other: 'os dias %{segments} do mês'
-      one: 'o dia %{segments} do mês'
+      other: 'no %{segments} dia do mês'
+      one: 'no %{segments} dia do mês'
     days_of_year:
-      other: "os dias %{segments} do ano"
-      one: "o dia %{segments} do ano"
+      other: "nos %{segments} dias do ano"
+      one: "o %{segments} dia do ano"
     at_hours_of_the_day:
-      other: "nas horas %{segments}"
-      one: "na hora %{segments}"
+      other: "na %{segments} hora"
+      one: "na %{segments} hora"
     on_minutes_of_hour:
-      other: "aux minutes %{segments} de chaque heure"
-      one: "à la minute %{segments} de chaque heure"
+      other: "no %{segments} minuto de cada hora"
+      one: "no %{segments} minuto de cada hora"
     at_seconds_of_minute:
-      other: aux secondes %{segments}
-      one: à la seconde %{segments}
+      other: no %{segments} segundo
+      one: no %{segments} segundo
     on_seconds_of_minute:
-      other: "aux secondes %{segments} de chaque minutes"
-      one: "à la seconde %{segments} de chaque minutes"
+      other: "no %{segments} segundo de cada minuto"
+      one: "no %{segments} segundo de cada minuto"
     each_second:
       one: cada segundo
       other: cada %{count} segundos
@@ -61,30 +61,35 @@ pt:
       one: cada hora
       other: cada %{count} horas
     each_day:
-      one: cada dia
+      one: diáriamente
       other: cada %{count} dias
     each_week:
-      one: cada semana
+      one: semanalmente
       other: cada %{count} semanas
     each_month:
-      one: cada mês
+      one: mensalmente
       other: cada %{count} meses
     each_year:
-      one: cada ano
+      one: anualmente
       other: cada %{count} anos
-    'on': en %{sentence}
-    in: 'en %{target}'
+    'on':  '%{sentence}'
+    in: 'no %{target}'
     integer:
-      negative: '%{ordinal} avant la fin'
+      negative: '%{ordinal} do fim'
       literal_ordinals:
         -1: penúltimo
         -2: antepenúltimo
       ordinal: '%{number}%{ordinal}'
       ordinals:
-        default: e
-        1: er
-    on_weekends: les weekends
-    on_weekdays: les jours de semaine
+        default: º
+        1: º
+        2: º 
+        3: º
+        11: º
+        12: º
+        13: º
+    on_weekends: aos fins de semana
+    on_weekdays: de segunda a sexta
     days_on:
       - domingo
       - segunda
@@ -93,10 +98,10 @@ pt:
       - quinta
       - sexta
       - sábado
-    on_days: le %{days}
+    on_days: '%{days}'
     array:
-      last_word_connector: ', et '
-      two_words_connector: ' et '
+      last_word_connector: ' e '
+      two_words_connector: ' e '
       words_connector: ', '
     string:
       format:
