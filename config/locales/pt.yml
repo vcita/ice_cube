@@ -6,27 +6,28 @@ pt:
     date:
       formats:
         default: '%-d %B %Y'
-      month_names:
-      - Janeiro 
-      - Fevereiro
-      - Março
-      - Abril
-      - Maio
-      - Junho
-      - Julho
-      - Agosto
-      - Setembro
-      - Outubro
-      - Novembro
-      - Dezembro
-      day_names:
-      - Domingo
-      - Segunda
-      - Terça
-      - Quarta
-      - Quinta
-      - Sexta
-      - Sábado
+      month_names: &month_names
+        -
+        - Janeiro
+        - Fevereiro
+        - Março
+        - Abril
+        - Maio
+        - Junho
+        - Julho
+        - Agosto
+        - Setembro
+        - Outubro
+        - Novembro
+        - Dezembro
+      day_names: &day_names
+        - Domingo
+        - Segunda
+        - Terça
+        - Quarta
+        - Quinta
+        - Sexta
+        - Sábado
     times:
       other: '%{count} vezes'
       one: '%{count} vez'
