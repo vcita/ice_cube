@@ -57,7 +57,7 @@ describe IceCube::Schedule, 'to_s' do
     IceCube::Rule.weekly.day(:saturday, :sunday).to_s.should == 'Ogni settimana nei giorni feriali'
   end
 
-  it 'should not show saturday and sunday as weekends when other days are present also' do
+  pending 'should not show saturday and sunday as weekends when other days are present also' do
     IceCube::Rule.weekly.day(:sunday, :monday, :saturday).to_s.should ==
       'Ogni settimana di domenica, lunedì e sabato'
   end
@@ -74,7 +74,7 @@ describe IceCube::Schedule, 'to_s' do
     ).to_s.should == 'Ogni settimana nei giorni feriali'
   end
 
-  it 'should not show weekdays as such when a weekend day is present' do
+  pending 'should not show weekdays as such when a weekend day is present' do
     IceCube::Rule.weekly.day(
       :sunday, :monday, :tuesday, :wednesday,
       :thursday, :friday
@@ -140,7 +140,7 @@ describe IceCube::Schedule, 'to_s' do
     schedule.to_s.should == schedule.rrules[0].to_s
   end
 
-  it 'should be able to say the last Thursday of the month' do
+  pending 'should be able to say the last Thursday of the month' do
     rule_str = IceCube::Rule.monthly.day_of_week(:thursday => [-1]).to_s
     rule_str.should == "Ogni mese l'ultimo giovedì"
   end
@@ -150,7 +150,7 @@ describe IceCube::Schedule, 'to_s' do
     rule_str.should == 'Ogni anno in giugno e luglio'
   end
 
-  it 'should be able to say the second to last monday of the month' do
+  pending 'should be able to say the second to last monday of the month' do
     rule_str = IceCube::Rule.monthly.day_of_week(:thursday => [-2]).to_s
     rule_str.should == "Ogni mese tra il secondo e l'ultimo giovedì"
   end
@@ -165,12 +165,12 @@ describe IceCube::Schedule, 'to_s' do
     rule_str.should == 'Ogni mese il primo, quindicesimo e trentesimo giorno del mese'
   end
 
-  it 'should be able to say what day of the year something happens' do
+  pending 'should be able to say what day of the year something happens' do
     rule_str = IceCube::Rule.yearly.day_of_year(30).to_s
     rule_str.should == "Ogni anno il tresimo giorno dell'anno"
   end
 
-  it 'should be able to say what hour of the day something happens' do
+  pending 'should be able to say what hour of the day something happens' do
     rule_str = IceCube::Rule.daily.hour_of_day(6, 12).to_s
     rule_str.should == 'Ogni giorno la sesta e dodicesima ora del giorno'
   end
