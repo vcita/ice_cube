@@ -72,10 +72,10 @@ it:
     each_year:
       one: Ogni anno
       other: Ogni %{count} anni
-    'di': il %{sentence}
+    'on': il %{sentence}
     in: 'a %{target}'
     integer:
-      negative: '%{ordinal} all'ultimo
+      negative: "%{ordinal} all'ultimo"
       literal_ordinals:
         -1: ultimo
         -2: penultimo

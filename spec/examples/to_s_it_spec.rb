@@ -142,7 +142,7 @@ describe IceCube::Schedule, 'to_s' do
 
   it 'should be able to say the last Thursday of the month' do
     rule_str = IceCube::Rule.monthly.day_of_week(:thursday => [-1]).to_s
-    rule_str.should == 'Ogni mese l'ultimo giovedì
+    rule_str.should == "Ogni mese l'ultimo giovedì"
   end
 
   it 'should be able to say what months of the year something happens' do
@@ -152,12 +152,12 @@ describe IceCube::Schedule, 'to_s' do
 
   it 'should be able to say the second to last monday of the month' do
     rule_str = IceCube::Rule.monthly.day_of_week(:thursday => [-2]).to_s
-    rule_str.should == 'Ogni mese tra il secondo e l'ultimo giovedì'
+    rule_str.should == "Ogni mese tra il secondo e l'ultimo giovedì"
   end
 
   it 'should join the first and last weekdays of the month' do
     rule_str = IceCube::Rule.monthly.day_of_week(:thursday => [1, -1]).to_s
-    rule_str.should == 'Ogni mese il primo giovedì e l'ultimo giovedì'
+    rule_str.should == "Ogni mese il primo giovedì e l'ultimo giovedì"
   end
 
   it 'should be able to say the days of the month something happens' do
@@ -167,7 +167,7 @@ describe IceCube::Schedule, 'to_s' do
 
   it 'should be able to say what day of the year something happens' do
     rule_str = IceCube::Rule.yearly.day_of_year(30).to_s
-    rule_str.should == 'Ogni anno il tresimo giorno dell'anno'
+    rule_str.should == "Ogni anno il tresimo giorno dell'anno"
   end
 
   it 'should be able to say what hour of the day something happens' do
@@ -177,7 +177,7 @@ describe IceCube::Schedule, 'to_s' do
 
   it 'should be able to say what minute of an hour something happens - with special suffix minutes' do
     rule_str = IceCube::Rule.hourly.minute_of_hour(10, 11, 12, 13, 14, 15).to_s
-    rule_str.should == 'Ogni ora al decimo, undicesimo, dodicesimo, tredicesimo, quattordicesimo e quindicesimo minuto dell'ora'
+    rule_str.should == "Ogni ora al decimo, undicesimo, dodicesimo, tredicesimo, quattordicesimo e quindicesimo minuto dell'ora"
   end
 
   it 'should be able to say what seconds of the minute something happens' do
