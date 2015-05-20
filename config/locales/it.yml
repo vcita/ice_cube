@@ -1,107 +1,107 @@
 it:
   ice_cube:
     pieces_connector: ' / '
-    not: 'not %{target}'
-    not_on: 'not on %{target}'
+    not: 'non %{target}'
+    not_on: 'non il %{target}'
     date:
       formats:
         default: '%B %-d, %Y'
       month_names:
       -
-      - January
-      - February
-      - March
-      - April
-      - May
-      - June
-      - July
-      - August
-      - September
-      - October
-      - November
-      - December
+      - Gennaio
+      - Febbraio
+      - Marzo
+      - Aprile
+      - Maggio
+      - Giugno
+      - Luglio
+      - Agosto
+      - Settembre
+      - Ottobre
+      - Novembre
+      - Dicembre
       day_names:
-      - Sunday
-      - Monday
-      - Tuesday
-      - Wednesday
-      - Thursday
-      - Friday
-      - Saturday
+      - Domenica
+      - Lunedì
+      - Martedì
+      - Mercoledì
+      - Giovedì
+      - Venerdì
+      - Sabato
     times:
-      other: '%{count} times'
-      one: '%{count} time'
-    until: 'until %{date}'
+      other: '%{count} volte'
+      one: '%{count} volta'
+    until: 'fino a %{date}'
     days_of_week: '%{segments} %{day}'
     days_of_month:
-      other: '%{segments} days of the month'
-      one: '%{segments} day of the month'
+      other: '%{segments} giorni del mese'
+      one: '%{segments} giorno del mese'
     days_of_year:
-      other: '%{segments} days of the year'
-      one: '%{segments} day of the year'
+      other: "%{segments} giorni dell'anno"
+      one: "%{segments} giorno dell'anno"
     at_hours_of_the_day:
-      other: on the %{segments} hours of the day
-      one: on the %{segments} hour of the day
+      other: alle ore %{segments} del giorno
+      one: all'ora %{segments} del giorno
     on_minutes_of_hour:
-      other: on the %{segments} minutes of the hour
-      one: on the %{segments} minute of the hour
+      other: ai minuti %{segments} dell'ora
+      one: al minuto %{segments} dell'ora
     at_seconds_of_minute:
-      other: at the %{segments} seconds
-      one: at the %{segments} second
+      other: ai secondi %{segments}
+      one: al secondo %{segments}
     on_seconds_of_minute:
-      other: on the %{segments} seconds of the minute
-      one: on the %{segments} second of the minute
+      other: ai secondi %{segments} del minuto
+      one: al secondo %{segments} del minuto
     each_second:
-      one: Secondly
-      other: Every %{count} seconds
+      one: Ogni secondo
+      other: Ogni %{count} secondi
     each_minute:
-      one: Minutely
-      other: Every %{count} minutes
+      one: Ogni minuto
+      other: Ogni %{count} minuti
     each_hour:
-      one: Hourly
-      other: Every %{count} hours
+      one: Ogni ora
+      other: Ogni %{count} ore
     each_day:
-      one: Daily
-      other: Every %{count} days
+      one: Ogni giorno
+      other: Ogni %{count} giorni
     each_week:
-      one: Weekly
-      other: Every %{count} weeks
+      one: Ogni settimana
+      other: Ogni %{count} settimane
     each_month:
-      one: Monthly
-      other: Every %{count} months
+      one: Ogni mese
+      other: Ogni %{count} mesi
     each_year:
-      one: Yearly
-      other: Every %{count} years
-    'on': on the %{sentence}
-    in: 'in %{target}'
+      one: Ogni anno
+      other: Ogni %{count} anni
+    'di': il %{sentence}
+    in: 'a %{target}'
     integer:
-      negative: '%{ordinal} to last'
+      negative: '%{ordinal} all'ultimo
       literal_ordinals:
-        -1: last
-        -2: 2nd to last
+        -1: ultimo
+        -2: penultimo
       ordinal: '%{number}%{ordinal}'
       ordinals:
-        default: th
-        1: st
-        2: nd
-        3: rd
-        11: th
-        12: th
-        13: th
-    on_weekends: on Weekends
-    on_weekdays: on Weekdays
+        default:
+        1: primo
+        2: secondo
+        3: terzo
+        11: undicesimo
+        12: dodicesimo
+        13: tredicesimo
+    on_weekends: nei giorni festivi
+    on_weekdays: nei giorni feriali
     days_on:
-      - Sundays
-      - Mondays
-      - Tuesdays
-      - Wednesdays
-      - Thursdays
-      - Fridays
-      - Saturdays
-    on_days: on %{days}
+      - Domeniche
+      - Lunedì
+      - Martedì
+      - Mercoledì
+      - Giovedì
+      - Venerdì
+      - Sabato
+    on_days: di %{days}
     array:
-      last_word_connector: ', and '
-      two_words_connector: ' and '
+      last_word_connector: ', e '
+      two_words_connector: ' e '
       words_connector: ', '
     string:
       format:
