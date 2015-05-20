@@ -1,0 +1,187 @@
+it:
+  ice_cube:
+    pieces_connector: ' / '
+    not: 'non %{target}'
+    not_on: 'non il %{target}'
+    date:
+      formats:
+        default: '%-d %B %Y'
+      month_names: &month_names
+      -
+      - gennaio
+      - febbraio
+      - marzo
+      - aprile
+      - maggio
+      - giugno
+      - luglio
+      - agosto
+      - settembre
+      - ottobre
+      - novembre
+      - dicembre
+      day_names: &day_names
+      - domenica
+      - lunedì
+      - martedì
+      - mercoledì
+      - giovedì
+      - venerdì
+      - sabato
+    times:
+      other: '%{count} volte'
+      one: '%{count} volta'
+    until: 'fino al %{date}'
+    days_of_week: '%{segments} %{day}'
+    days_of_month:
+      other: '%{segments} giorno del mese'
+      one: '%{segments} giorno del mese'
+    days_of_year:
+      other: "%{segments} giorni dell'anno"
+      one: "%{segments} giorno dell'anno"
+    at_hours_of_the_day:
+      other: la %{segments} ora del giorno
+      one: all'ora %{segments} del giorno
+    on_minutes_of_hour:
+      other: al %{segments} minuto dell'ora
+      one: al minuto %{segments} dell'ora
+    at_seconds_of_minute:
+      other: al secondi %{segments}
+      one: al secondo %{segments}
+    on_seconds_of_minute:
+      other: al %{segments} secondo del minuto
+      one: al secondo %{segments} del minuto
+    each_second:
+      one: Ogni secondo
+      other: Ogni %{count} secondi
+    each_minute:
+      one: Ogni minuto
+      other: Ogni %{count} minuti
+    each_hour:
+      one: Ogni ora
+      other: Ogni %{count} ore
+    each_day:
+      one: Ogni giorno
+      other: Ogni %{count} giorni
+    each_week:
+      one: Ogni settimana
+      other: Ogni %{count} settimane
+    each_month:
+      one: Ogni mese
+      other: Ogni %{count} mesi
+    each_year:
+      one: Ogni anno
+      other: Ogni %{count} anni
+    'on': il %{sentence}
+    in: 'in %{target}'
+    integer:
+      negative: "%{ordinal} all'ultimo"
+      literal_ordinals:
+        1: primo
+        2: secondo
+        3: terzo
+        6: sesta
+        10: decimo
+        11: undicesimo
+        12: dodicesimo
+        13: tredicesimo
+        14: quattordicesimo
+        15: quindicesimo
+        30: trentesimo
+        -1: "l'ultimo"
+        -2: penultimo
+      ordinal: '%{number}%{ordinal}'
+      ordinals:
+        default:
+        1: primo
+        2: secondo
+        3: terzo
+        11: undicesimo
+        12: dodicesimo
+        13: tredicesimo
+    on_weekends: nei giorni feriali
+    on_weekdays: nei giorni feriali
+    days_on:
+      - domeniche
+      - lunedì
+      - martedì
+      - mercoledì
+      - giovedì
+      - venerdì
+      - sabato
+    on_days: di %{days}
+    array:
+      last_word_connector: ' e '
+      two_words_connector: ' e '
+      words_connector: ', '
+    string:
+      format:
+        day: '%{rest} %{current}'
+        day_of_week: '%{rest} %{current}'
+        day_of_month: '%{rest} %{current}'
+        day_of_year: '%{rest} %{current}'
+        hour_of_day: '%{rest} %{current}'
+        minute_of_hour: '%{rest} %{current}'
+        until: '%{rest} %{current}'
+        count: '%{rest} %{current}'
+        default: '%{rest} %{current}'
+  date:
+    abbr_day_names:
+    - dom
+    - lun
+    - mar
+    - mer
+    - gio
+    - ven
+    - sab
+    abbr_month_names:
+    - 
+    - gen
+    - feb
+    - mar
+    - apr
+    - mag
+    - giu
+    - lug
+    - ago
+    - set
+    - ott
+    - nov
+    - dic
+    day_names:
+    - domenica
+    - lunedì
+    - martedì
+    - mercoledì
+    - giovedì
+    - venerdì
+    - sabato
+    formats:
+      default: "%d/%m/%Y"
+      long: "%d %B %Y"
+      short: "%d %b"
+    month_names:
+    - 
+    - gennaio
+    - febbraio
+    - marzo
+    - aprile
+    - maggio
+    - giugno
+    - luglio
+    - agosto
+    - settembre
+    - ottobre
+    - novembre
+    - dicembre
+    order:
+    - :day
+    - :month
+    - :year
+  time:
+    am: am
+    formats:
+      default: "%a %d %b %Y, %H:%M:%S %z"
+      long: "%d %B %Y %H:%M"
+      short: "%d %b %H:%M"
+    pm: pm
