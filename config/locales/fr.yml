@@ -31,7 +31,7 @@ fr:
     times:
       other: '%{count} fois'
       one: '%{count} fois'
-    until: "jusqu'à %{date}"
+    until: "jusqu'au %{date}"
     days_of_week: '%{segments} %{day}'
     days_of_month:
       other: 'les %{segments} du mois'
