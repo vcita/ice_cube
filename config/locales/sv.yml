@@ -5,7 +5,7 @@ sv:
     not_on: 'inte på %{target}'
     date:
       formats:
-        default: '%B %-d, %Y'
+        default: '%-d %B, %Y'
       month_names:
       -
       - Januari
@@ -62,7 +62,7 @@ sv:
       other: Var %{count} timme
     each_day:
       one: Dagligen
-      other: Every %{count} days
+      other: Var %{count} dag
     each_week:
       one: Varje vecka
       other: Var %{count} vecka
@@ -88,16 +88,16 @@ sv:
         11: e
         12: e
         13: e
-    on_weekends: på Helger
-    on_weekdays: på Veckodagar
+    on_weekends: på helger
+    on_weekdays: på veckodagar
     days_on:
-      - Söndagar
-      - Måndagar
-      - Tisdagar
-      - Onsdagar
-      - Torsdagar
-      - Fredagar
-      - Lördagar
+      - söndag
+      - måndag
+      - tisdag
+      - onsdag
+      - torsdag
+      - fredag
+      - lördag
     on_days: på %{days}
     array:
       last_word_connector: ', och '
