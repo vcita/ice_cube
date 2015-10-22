@@ -31,14 +31,14 @@ sv:
     times:
       other: '%{count} gånger'
       one: '%{count} gång'
-    until: 'till %{date}'
+    until: 'tills %{date}'
     days_of_week: '%{segments} %{day}'
     days_of_month:
       other: '%{segments} dagar i månaden'
-      one: '%{segments} dagen i månaden'
+      one: '%{segments} dag i månaden'
     days_of_year:
-      other: '%{segments} dagar på året'
-      one: '%{segments} dag på året'
+      other: '%{segments} dagar om året'
+      one: '%{segments} dag om året'
     at_hours_of_the_day:
       other: på de %{segments} timmarna på dagen
       one: på den %{segments} timmen på dagen
@@ -75,19 +75,16 @@ sv:
     'on': på den %{sentence}
     in: 'i %{target}'
     integer:
-      negative: '%{ordinal} till siste'
+      negative: '%{ordinal} till sista'
       literal_ordinals:
+        0: sista
         -1: sista
         -2: 2a från sista
       ordinal: '%{number}%{ordinal}'
       ordinals:
         default: e
-        1: e
-        2: e
-        3: e
-        11: e
-        12: e
-        13: e
+        1: a
+        2: a
     on_weekends: på helger
     on_weekdays: på veckodagar
     days_on:
